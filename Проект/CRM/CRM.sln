@@ -1,0 +1,19 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CRM.Domain", "CRM.Domain", "{89465A0A-85BF-4E41-B2D8-61494E00147E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CRM.Application", "CRM.Application", "{3088E078-D1A7-4FD7-86F9-F15F457D1EC3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CRM.Persistence", "CRM.Persistence", "{111717A9-85E0-4C59-B8B7-358E76BCEB79}"
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {384DB012-3BFE-465F-9B14-53CC426D42F0}
+	EndGlobalSection
+EndGlobal

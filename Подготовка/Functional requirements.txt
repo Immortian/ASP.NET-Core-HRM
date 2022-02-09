@@ -1,0 +1,48 @@
+WebAPI functional requirements:
+
+* Data control functions
+   * Recruiting
+      * CRUD Candidate Info
+      * CRUD Candidate Documents Data
+      * CRD Interview Info
+   * Employee management
+      * CRUD Employee Info
+      * CUD Authorization Info
+      * CRD Dismissal Info
+      * CRD Achievements Data
+   * Employee structuring
+      * CRUD Department Info
+   * Time management
+      * CRUD Period Info
+      * RUD Department Workload Data
+      * RUD Employee Workload Data
+* Statistics functions
+   * Recruiting
+      * Education level statistics
+      * Interview passes statistics
+   * Employee management
+      * In stuff procent
+   * Employee structuring
+      * Money per hour statistics
+      * Money per hour dynamics
+   * Time management
+      * Estimated working hours per period dynamics
+      * Estimated working hours per department dynamics
+      * Estimated working hours per department statistics
+      * Estimated working hours per employee dynamics
+      * Worked hours statistics
+      * Employee salary statistics
+* Advanced functions (optional)
+   * Generate addendum for every employee per period
+      * Generate word documents from tamplate
+      * Convert documents into .pdf
+      * Send files
+         * Send file archive (for administration)
+         * Send single file (for employee)
+   * Send notifications
+      * for administration
+         * if there is a new period, but estimated working hours unseted
+         * if there are new candidates with no inverviews
+      * for employee
+         * if there is created/updated workload
+         * if current salary was calculated
