@@ -1,0 +1,14 @@
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\bin\Debug\net6.0\CRM.Domain.deps.json
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\bin\Debug\net6.0\CRM.Domain.runtimeconfig.json
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\bin\Debug\net6.0\CRM.Domain.dll
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\bin\Debug\net6.0\ref\CRM.Domain.dll
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\bin\Debug\net6.0\CRM.Domain.pdb
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\CRM.Domain.csproj.AssemblyReference.cache
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\CRM.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\CRM.Domain.AssemblyInfoInputs.cache
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\CRM.Domain.AssemblyInfo.cs
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\CRM.Domain.csproj.CoreCompileInputs.cache
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\CRM.Domain.dll
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\ref\CRM.Domain.dll
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\CRM.Domain.pdb
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\CRM.Domain.genruntimeconfig.cache
