@@ -1,25 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
 using CRM.Application.Interfaces;
-using CRM.Domain.Model;
+using CRM.Application.BusinessLogic.Candidates;
+using CRM.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 
 namespace CRM.Persistence
 {
-    /// <summary>
-    /// Большая часть кода сгенерирована автоматически с помощью scafold-dbcontext
-    /// </summary>
     public partial class CRMContext : DbContext, ICRMDBContext
     {
+        public CRMContext()
+        {
+        }
+
         public CRMContext(DbContextOptions<CRMContext> options)
             : base(options)
         {
         }
 
         public virtual DbSet<Authorization> Authorizations { get; set; } = null!;
-        public virtual DbSet<Candidate> Candidates { get; set; } = null!;
-        public virtual DbSet<ContactData> ContactData { get; set; } = null!;
+        public virtual CandidateRepository Candidates { get; set; } = null!;
+        public virtual DbSet<ContactDatum> ContactData { get; set; } = null!;
         public virtual DbSet<Department> Departments { get; set; } = null!;
         public virtual DbSet<DepartmentWorkLoad> DepartmentWorkLoads { get; set; } = null!;
         public virtual DbSet<Dismissal> Dismissals { get; set; } = null!;
@@ -30,6 +32,14 @@ namespace CRM.Persistence
         public virtual DbSet<PassportInfo> PassportInfos { get; set; } = null!;
         public virtual DbSet<Period> Periods { get; set; } = null!;
         public virtual DbSet<PersonalAchievement> PersonalAchievements { get; set; } = null!;
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Data Source=LAPTOP-5FUCQ052; Trusted_Connection=True; Initial Catalog=Call_centerTest");
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -86,7 +96,7 @@ namespace CRM.Persistence
                     .HasConstraintName("FK_Candidate_Passport_info");
             });
 
-            modelBuilder.Entity<ContactData>(entity =>
+            modelBuilder.Entity<ContactDatum>(entity =>
             {
                 entity.HasKey(e => e.ContactDataId);
 
@@ -115,7 +125,14 @@ namespace CRM.Persistence
 
                 entity.Property(e => e.EmployeeCount).HasColumnName("Employee_count");
 
+                entity.Property(e => e.ManagerId).HasColumnName("Manager_id");
+
                 entity.Property(e => e.TotalMoneyPerHour).HasColumnName("total_money_per_hour");
+
+                entity.HasOne(d => d.Manager)
+                    .WithMany(p => p.Departments)
+                    .HasForeignKey(d => d.ManagerId)
+                    .HasConstraintName("FK_Department_Employee");
             });
 
             modelBuilder.Entity<DepartmentWorkLoad>(entity =>
@@ -206,6 +223,10 @@ namespace CRM.Persistence
 
                 entity.Property(e => e.EmployeeId).HasColumnName("Employee_id");
 
+                entity.Property(e => e.AuthorizationCode)
+                    .HasMaxLength(50)
+                    .HasColumnName("Authorization_code");
+
                 entity.Property(e => e.ContactDataId).HasColumnName("Contact_data_id");
 
                 entity.Property(e => e.DepartmentId).HasColumnName("Department_id");
@@ -223,7 +244,6 @@ namespace CRM.Persistence
                 entity.HasOne(d => d.Department)
                     .WithMany(p => p.Employees)
                     .HasForeignKey(d => d.DepartmentId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Employee_Department");
 
                 entity.HasOne(d => d.Interview)

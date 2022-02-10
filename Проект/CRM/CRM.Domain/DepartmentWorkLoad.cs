@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CRM.Domain.Model
+namespace CRM.Domain
 {
     public partial class DepartmentWorkLoad
     {

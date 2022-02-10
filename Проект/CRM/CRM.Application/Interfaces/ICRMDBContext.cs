@@ -1,4 +1,5 @@
-﻿using CRM.Domain.Model;
+﻿using CRM.Domain;
+using CRM.Application.BusinessLogic.Candidates;
 using Microsoft.EntityFrameworkCore;
 
 namespace CRM.Application.Interfaces
@@ -6,8 +7,8 @@ namespace CRM.Application.Interfaces
     public interface ICRMDBContext
     {
         public DbSet<Authorization> Authorizations { get; set; }
-        public DbSet<Candidate> Candidates { get; set; }
-        public DbSet<ContactData> ContactData { get; set; }
+        public CandidateRepository Candidates { get; set; }
+        public DbSet<ContactDatum> ContactData { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<DepartmentWorkLoad> DepartmentWorkLoads { get; set; }
         public DbSet<Dismissal> Dismissals { get; set; }

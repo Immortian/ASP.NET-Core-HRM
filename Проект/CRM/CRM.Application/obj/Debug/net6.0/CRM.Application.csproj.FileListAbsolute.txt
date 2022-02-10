@@ -10,3 +10,8 @@ D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Application\obj\Deb
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Application\obj\Debug\net6.0\CRM.Application.dll
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Application\obj\Debug\net6.0\ref\CRM.Application.dll
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Application\obj\Debug\net6.0\CRM.Application.pdb
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Application\bin\Debug\net6.0\CRM.Application.runtimeconfig.json
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Application\bin\Debug\net6.0\CRM.Domain.dll
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Application\bin\Debug\net6.0\CRM.Domain.pdb
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Application\obj\Debug\net6.0\CRM.Application.csproj.CopyComplete
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Application\obj\Debug\net6.0\CRM.Application.genruntimeconfig.cache

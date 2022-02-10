@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CRM.Domain.Model
+namespace CRM.Domain
 {
     public partial class Candidate
     {
@@ -17,7 +17,7 @@ namespace CRM.Domain.Model
         public string? Education { get; set; }
         public int ExpirienseYears { get; set; }
 
-        public virtual ContactData ContactData { get; set; } = null!;
+        public virtual ContactDatum ContactData { get; set; } = null!;
         public virtual PassportInfo Passport { get; set; } = null!;
         public virtual ICollection<Document> Documents { get; set; }
         public virtual ICollection<Interview> Interviews { get; set; }

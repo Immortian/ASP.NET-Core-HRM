@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace CRM.Domain.Model
+namespace CRM.Domain
 {
     public partial class Department
     {
@@ -16,8 +16,9 @@ namespace CRM.Domain.Model
         public string Direction { get; set; } = null!;
         public double BasicMoneyPerHour { get; set; }
         public double TotalMoneyPerHour { get; set; }
-        public int Manager_id { get; set; }
+        public int? ManagerId { get; set; }
 
+        public virtual Employee? Manager { get; set; }
         public virtual ICollection<DepartmentWorkLoad> DepartmentWorkLoads { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
     }
