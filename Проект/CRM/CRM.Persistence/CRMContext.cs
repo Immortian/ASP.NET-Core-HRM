@@ -6,6 +6,8 @@ using CRM.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using CRM.Application.BusinessLogic.ContactDatum;
+using CRM.Application.BusinessLogic.Departments;
+using CRM.Application.BusinessLogic.DepartmentWorkLoads;
 
 namespace CRM.Persistence
 {
@@ -23,8 +25,8 @@ namespace CRM.Persistence
         public virtual DbSet<Authorization> Authorizations { get; set; } = null!;
         public virtual CandidateRepository Candidates { get; set; } = null!;
         public virtual ContactDataRepository ContactData { get; set; } = null!;
-        public virtual DbSet<Department> Departments { get; set; } = null!;
-        public virtual DbSet<DepartmentWorkLoad> DepartmentWorkLoads { get; set; } = null!;
+        public virtual DepartmentRepository Departments { get; set; } = null!;
+        public virtual DepartmentWorkLoadRepository DepartmentWorkLoads { get; set; } = null!;
         public virtual DbSet<Dismissal> Dismissals { get; set; } = null!;
         public virtual DbSet<Document> Documents { get; set; } = null!;
         public virtual DbSet<Employee> Employees { get; set; } = null!;
