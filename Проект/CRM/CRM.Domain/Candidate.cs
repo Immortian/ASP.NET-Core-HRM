@@ -17,7 +17,7 @@ namespace CRM.Domain
         public string? Education { get; set; }
         public int ExpirienseYears { get; set; }
 
-        public virtual ContactDatum ContactData { get; set; } = null!;
+        public virtual ContactData ContactData { get; set; } = null!;
         public virtual PassportInfo Passport { get; set; } = null!;
         public virtual ICollection<Document> Documents { get; set; }
         public virtual ICollection<Interview> Interviews { get; set; }

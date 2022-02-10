@@ -22,7 +22,7 @@ namespace CRM.Domain
         public bool Active { get; set; }
         public string AuthorizationCode { get; set; } = null!;
 
-        public virtual ContactDatum ContactData { get; set; } = null!;
+        public virtual ContactData ContactData { get; set; } = null!;
         public virtual Department? Department { get; set; }
         public virtual Interview Interview { get; set; } = null!;
         public virtual PassportInfo Passport { get; set; } = null!;

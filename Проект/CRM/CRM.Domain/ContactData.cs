@@ -3,9 +3,9 @@ using System.Collections.Generic;
 
 namespace CRM.Domain
 {
-    public partial class ContactDatum
+    public partial class ContactData
     {
-        public ContactDatum()
+        public ContactData()
         {
             Employees = new HashSet<Employee>();
         }

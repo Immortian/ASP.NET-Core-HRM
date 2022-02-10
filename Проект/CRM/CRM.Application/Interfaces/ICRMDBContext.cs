@@ -1,6 +1,7 @@
 ﻿using CRM.Domain;
 using CRM.Application.BusinessLogic.Candidates;
 using Microsoft.EntityFrameworkCore;
+using CRM.Application.BusinessLogic.ContactDatum;
 
 namespace CRM.Application.Interfaces
 {
@@ -8,7 +9,7 @@ namespace CRM.Application.Interfaces
     {
         public DbSet<Authorization> Authorizations { get; set; }
         public CandidateRepository Candidates { get; set; }
-        public DbSet<ContactDatum> ContactData { get; set; }
+        public ContactDataRepository ContactData { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<DepartmentWorkLoad> DepartmentWorkLoads { get; set; }
         public DbSet<Dismissal> Dismissals { get; set; }

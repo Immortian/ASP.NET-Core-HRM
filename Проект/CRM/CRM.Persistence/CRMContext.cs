@@ -5,6 +5,7 @@ using CRM.Application.BusinessLogic.Candidates;
 using CRM.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
+using CRM.Application.BusinessLogic.ContactDatum;
 
 namespace CRM.Persistence
 {
@@ -21,7 +22,7 @@ namespace CRM.Persistence
 
         public virtual DbSet<Authorization> Authorizations { get; set; } = null!;
         public virtual CandidateRepository Candidates { get; set; } = null!;
-        public virtual DbSet<ContactDatum> ContactData { get; set; } = null!;
+        public virtual ContactDataRepository ContactData { get; set; } = null!;
         public virtual DbSet<Department> Departments { get; set; } = null!;
         public virtual DbSet<DepartmentWorkLoad> DepartmentWorkLoads { get; set; } = null!;
         public virtual DbSet<Dismissal> Dismissals { get; set; } = null!;
@@ -96,7 +97,7 @@ namespace CRM.Persistence
                     .HasConstraintName("FK_Candidate_Passport_info");
             });
 
-            modelBuilder.Entity<ContactDatum>(entity =>
+            modelBuilder.Entity<ContactData>(entity =>
             {
                 entity.HasKey(e => e.ContactDataId);
 
