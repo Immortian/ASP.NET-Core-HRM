@@ -4,6 +4,8 @@ using CRM.Application.BusinessLogic.Candidates;
 using CRM.Application.BusinessLogic.ContactDatum;
 using CRM.Application.BusinessLogic.Departments;
 using CRM.Application.BusinessLogic.DepartmentWorkLoads;
+using CRM.Application.BusinessLogic.Employees;
+using CRM.Application.BusinessLogic.EmployeeWorkLoads;
 
 namespace CRM.Application.Interfaces
 {
@@ -16,8 +18,8 @@ namespace CRM.Application.Interfaces
         public DepartmentWorkLoadRepository DepartmentWorkLoads { get; set; }
         public DbSet<Dismissal> Dismissals { get; set; }
         public DbSet<Document> Documents { get; set; }
-        public DbSet<Employee> Employees { get; set; }
-        public DbSet<EmployeeWorkLoad> EmployeeWorkLoads { get; set; }
+        public EmployeeRepository Employees { get; set; }
+        public EmployeeWorkLoadRepository EmployeeWorkLoads { get; set; }
         public DbSet<Interview> Interviews { get; set; }
         public DbSet<PassportInfo> PassportInfos { get; set; }
         public DbSet<Period> Periods { get; set; }

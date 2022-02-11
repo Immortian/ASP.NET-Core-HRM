@@ -16,5 +16,10 @@ namespace CRM.Application.BusinessLogic.DepartmentWorkLoads
         {
             context = _context;
         }
+
+        public IEnumerable<DepartmentWorkLoad> GetWithNotEnoughHours()
+        {
+            return context.Where(x => x.IsEqualOrMore == true);
+        }
     }
 }

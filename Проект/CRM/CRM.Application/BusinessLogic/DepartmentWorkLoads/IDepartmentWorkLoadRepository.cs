@@ -10,6 +10,6 @@ namespace CRM.Application.BusinessLogic.DepartmentWorkLoads
 {
     public interface IDepartmentWorkLoadRepository : IDbSet<DepartmentWorkLoad>
     {
-
+        IEnumerable<DepartmentWorkLoad> GetWithNotEnoughHours();
     }
 }

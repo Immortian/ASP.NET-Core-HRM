@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using CRM.Application.BusinessLogic.ContactDatum;
 using CRM.Application.BusinessLogic.Departments;
 using CRM.Application.BusinessLogic.DepartmentWorkLoads;
+using CRM.Application.BusinessLogic.Employees;
 
 namespace CRM.Persistence
 {
@@ -29,7 +30,7 @@ namespace CRM.Persistence
         public virtual DepartmentWorkLoadRepository DepartmentWorkLoads { get; set; } = null!;
         public virtual DbSet<Dismissal> Dismissals { get; set; } = null!;
         public virtual DbSet<Document> Documents { get; set; } = null!;
-        public virtual DbSet<Employee> Employees { get; set; } = null!;
+        public virtual EmployeeRepository Employees { get; set; } = null!;
         public virtual DbSet<EmployeeWorkLoad> EmployeeWorkLoads { get; set; } = null!;
         public virtual DbSet<Interview> Interviews { get; set; } = null!;
         public virtual DbSet<PassportInfo> PassportInfos { get; set; } = null!;
