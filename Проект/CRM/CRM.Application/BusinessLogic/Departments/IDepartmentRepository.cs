@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRM.Application.BusinessLogic.Departments
 {
-    public interface IDepartmentRepository : IDbSet<Department>
+    public interface IDepartmentRepository
     {
 
     }

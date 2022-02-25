@@ -9,17 +9,17 @@ using CRM.Application.BusinessLogic.EmployeeWorkLoads;
 
 namespace CRM.Application.Interfaces
 {
-    public interface ICRMDBContext
+    public interface ICRMDBContext 
     {
         public DbSet<Authorization> Authorizations { get; set; }
-        public CandidateRepository Candidates { get; set; }
-        public ContactDataRepository ContactData { get; set; }
-        public DepartmentRepository Departments { get; set; }
-        public DepartmentWorkLoadRepository DepartmentWorkLoads { get; set; }
+        public DbSet<Candidate> Candidates { get; set; }
+        public DbSet<ContactData> ContactData { get; set; }
+        public DbSet<Department> Departments { get; set; }
+        public DbSet<DepartmentWorkLoad> DepartmentWorkLoads { get; set; }
         public DbSet<Dismissal> Dismissals { get; set; }
         public DbSet<Document> Documents { get; set; }
-        public EmployeeRepository Employees { get; set; }
-        public EmployeeWorkLoadRepository EmployeeWorkLoads { get; set; }
+        public DbSet<Employee> Employees { get; set; }
+        public DbSet<EmployeeWorkLoad> EmployeeWorkLoads { get; set; }
         public DbSet<Interview> Interviews { get; set; }
         public DbSet<PassportInfo> PassportInfos { get; set; }
         public DbSet<Period> Periods { get; set; }

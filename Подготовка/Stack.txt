@@ -9,4 +9,6 @@ Project Stack list:
 * IRepository pattern
 * идентификация приняла ислам, юзаем бд без токенов
 * Repository
-  * SQL Server
+  * Base
+  * Entities
+  * UnitOfWork

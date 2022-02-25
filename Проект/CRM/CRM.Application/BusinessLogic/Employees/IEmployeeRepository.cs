@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRM.Application.BusinessLogic.Employees
 {
-    public interface IEmployeeRepository : IDbSet<Employee>
+    public interface IEmployeeRepository
     {
         IEnumerable<Employee> GetActive();
         IEnumerable<Employee> GetWithMissingContactData();

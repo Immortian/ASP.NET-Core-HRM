@@ -9,10 +9,11 @@ using CRM.Application.BusinessLogic.ContactDatum;
 using CRM.Application.BusinessLogic.Departments;
 using CRM.Application.BusinessLogic.DepartmentWorkLoads;
 using CRM.Application.BusinessLogic.Employees;
+using CRM.Application.BusinessLogic.EmployeeWorkLoads;
 
 namespace CRM.Persistence
 {
-    public partial class CRMContext : DbContext, ICRMDBContext
+    public partial class CRMContext : DbContext
     {
         public CRMContext()
         {
@@ -24,24 +25,25 @@ namespace CRM.Persistence
         }
 
         public virtual DbSet<Authorization> Authorizations { get; set; } = null!;
-        public virtual CandidateRepository Candidates { get; set; } = null!;
-        public virtual ContactDataRepository ContactData { get; set; } = null!;
-        public virtual DepartmentRepository Departments { get; set; } = null!;
-        public virtual DepartmentWorkLoadRepository DepartmentWorkLoads { get; set; } = null!;
+        public virtual DbSet<Candidate> Candidates { get; set; } = null!;
+        public virtual DbSet<ContactData> ContactData { get; set; } = null!;
+        public virtual DbSet<Department> Departments { get; set; } = null!;
+        public virtual DbSet<DepartmentWorkLoad> DepartmentWorkLoads { get; set; } = null!;
         public virtual DbSet<Dismissal> Dismissals { get; set; } = null!;
         public virtual DbSet<Document> Documents { get; set; } = null!;
-        public virtual EmployeeRepository Employees { get; set; } = null!;
+        public virtual DbSet<Employee> Employees { get; set; } = null!;
         public virtual DbSet<EmployeeWorkLoad> EmployeeWorkLoads { get; set; } = null!;
         public virtual DbSet<Interview> Interviews { get; set; } = null!;
         public virtual DbSet<PassportInfo> PassportInfos { get; set; } = null!;
         public virtual DbSet<Period> Periods { get; set; } = null!;
         public virtual DbSet<PersonalAchievement> PersonalAchievements { get; set; } = null!;
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer("Data Source=LAPTOP-5FUCQ052; Trusted_Connection=True; Initial Catalog=Call_centerTest");
+                optionsBuilder
+                    .UseLazyLoadingProxies()
+                    .UseSqlServer("Data Source=LAPTOP-5FUCQ052; Trusted_Connection=True; MultipleActiveResultSets=True; Initial Catalog=Call_centerTest");
             }
         }
 

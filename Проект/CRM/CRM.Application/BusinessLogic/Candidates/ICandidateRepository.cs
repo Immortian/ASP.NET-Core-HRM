@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRM.Application.BusinessLogic.Candidates
 {
-    public interface ICandidateRepository : IDbSet<Candidate>
+    public interface ICandidateRepository
     {
         IEnumerable<Candidate> GetNotInterviewed();
         IEnumerable<Candidate> GetInterviewed();

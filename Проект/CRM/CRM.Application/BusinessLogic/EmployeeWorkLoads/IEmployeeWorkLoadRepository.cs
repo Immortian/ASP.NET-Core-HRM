@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace CRM.Application.BusinessLogic.EmployeeWorkLoads
 {
-    public interface IEmployeeWorkLoadRepository : IDbSet<EmployeeWorkLoad>
+    public interface IEmployeeWorkLoadRepository
     {
         IEnumerable<EmployeeWorkLoad> GetWithNotEnoughHours();
 

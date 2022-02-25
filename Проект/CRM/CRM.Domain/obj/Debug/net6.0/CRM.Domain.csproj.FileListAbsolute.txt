@@ -1,5 +1,4 @@
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\bin\Debug\net6.0\CRM.Domain.deps.json
-D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\bin\Debug\net6.0\CRM.Domain.runtimeconfig.json
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\bin\Debug\net6.0\CRM.Domain.dll
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\bin\Debug\net6.0\ref\CRM.Domain.dll
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\bin\Debug\net6.0\CRM.Domain.pdb
@@ -11,4 +10,3 @@ D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\ne
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\CRM.Domain.dll
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\ref\CRM.Domain.dll
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\CRM.Domain.pdb
-D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\CRM.Domain\obj\Debug\net6.0\CRM.Domain.genruntimeconfig.cache
