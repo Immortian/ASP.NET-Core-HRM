@@ -9,8 +9,8 @@ namespace CRM.Persistence
 {
     public class UnitOfWork
     {
-        private readonly CRMContext context;
-        public UnitOfWork(CRMContext _context)
+        private readonly CRMDBContext context;
+        public UnitOfWork(CRMDBContext _context)
         {
             context = _context;
             Candidate = new CandidateRepository(context);

@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "rQg+tDJCnGzPdHS8+CslKRVHEuT2Q52nw8d79hi02vZjQMCijeXThIvelh2QwQDO3qfzbI/OTtOr0kT/vdIDzA==",
+  "dgSpecHash": "6BZb5jl8TTIS3h9mlsh/r23fCZfJ81NJT903xTyNhjBznrSa850UO7So4xI+YE7X5i5WfqT09Gy7qHAEUIW2ig==",
   "success": true,
   "projectFilePath": "D:\\Для работы\\ASP.NET-Core-CRM\\Проект\\CRM\\CRM.Application\\CRM.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andmo\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\andmo\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
+    "C:\\Users\\andmo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.6\\fluentvalidation.dependencyinjectionextensions.10.3.6.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\microsoft.entityframeworkcore\\6.0.2\\microsoft.entityframeworkcore.6.0.2.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\6.0.2\\microsoft.entityframeworkcore.abstractions.6.0.2.nupkg.sha512",

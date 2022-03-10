@@ -1,24 +1,18 @@
-﻿using CRM.Application.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
 
 namespace CRM.Persistence.Repositories.Base
 {
     public class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
-        internal readonly CRMContext context;
+        internal readonly CRMDBContext context;
 
-        public RepositoryBase(CRMContext context)
+        public RepositoryBase(CRMDBContext context)
         {
             this.context = context;
         }
         public async Task<T> CreateAsync(T entity)
         {
             await context.Set<T>().AddAsync(entity);
-
             return entity;
         }
 
@@ -27,12 +21,12 @@ namespace CRM.Persistence.Repositories.Base
             context.Set<T>().Remove(entity);
         }
 
-        public async Task<List<T>> GetAllAsync()
+        public virtual async Task<List<T>> GetAllAsync()
         {
-            return context.Set<T>().ToList();
+            return await context.Set<T>().ToListAsync();
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public virtual async Task<T> GetByIdAsync(int id)
         {
             return await context.Set<T>().FindAsync(id);
         }

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "aVOzP7WonF6lS+5KQ8Q9PljDpa7cR9sxDXQXpZ1ctkb9QeK5toNxjA9RBAsFb+/zAc2R2EaCW96IFxum+7jtaQ==",
+  "dgSpecHash": "ZuSFCTumqtYZr6pwAX7SEQP5NGJZZgruPWwMXC3mXJVE5OwEupXR1d92f5CSCSQ4TAEcm+x6pzWytCzht343TQ==",
   "success": true,
   "projectFilePath": "D:\\Для работы\\ASP.NET-Core-CRM\\Проект\\CRM\\ConsoleApp1\\ConsoleApp1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andmo\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\andmo\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
+    "C:\\Users\\andmo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.6\\fluentvalidation.dependencyinjectionextensions.10.3.6.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\microsoft.data.sqlclient.sni.runtime\\2.1.1\\microsoft.data.sqlclient.sni.runtime.2.1.1.nupkg.sha512",

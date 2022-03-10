@@ -72,3 +72,5 @@ D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\ConsoleApp1\obj\Debug\n
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\ConsoleApp1\obj\Debug\net6.0\ref\ConsoleApp1.dll
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.pdb
 D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\ConsoleApp1\obj\Debug\net6.0\ConsoleApp1.genruntimeconfig.cache
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\ConsoleApp1\bin\Debug\net6.0\FluentValidation.dll
+D:\Для работы\ASP.NET-Core-CRM\Проект\CRM\ConsoleApp1\bin\Debug\net6.0\FluentValidation.DependencyInjectionExtensions.dll

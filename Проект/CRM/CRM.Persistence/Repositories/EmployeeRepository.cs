@@ -1,12 +1,13 @@
 ﻿using CRM.Application.BusinessLogic.Employees;
 using CRM.Domain;
 using CRM.Persistence.Repositories.Base;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRM.Persistence.Repositories
 {
     public class EmployeeRepository : RepositoryBase<Employee>, IEmployeeRepository
     {
-        public EmployeeRepository(CRMContext context) : base(context)
+        public EmployeeRepository(CRMDBContext context) : base(context)
         {
         }
 

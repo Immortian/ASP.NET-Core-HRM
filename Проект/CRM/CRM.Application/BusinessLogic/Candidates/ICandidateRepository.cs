@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data.Entity;
-using CRM.Domain;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using CRM.Domain;
 
 namespace CRM.Application.BusinessLogic.Candidates
 {
     public interface ICandidateRepository
     {
-        IEnumerable<Candidate> GetNotInterviewed();
-        IEnumerable<Candidate> GetInterviewed();
+        Task<List<Candidate>> GetNotInterviewed();
+        Task<List<Candidate>> GetInterviewed();
     }
 }

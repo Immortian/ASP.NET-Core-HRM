@@ -1,12 +1,13 @@
 ﻿using CRM.Application.BusinessLogic.EmployeeWorkLoads;
 using CRM.Domain;
 using CRM.Persistence.Repositories.Base;
+using Microsoft.EntityFrameworkCore;
 
 namespace CRM.Persistence.Repositories
 {
     public class EmployeeWorkLoadRepository : RepositoryBase<EmployeeWorkLoad>, IEmployeeWorkLoadRepository
     {
-        public EmployeeWorkLoadRepository(CRMContext context) : base(context)
+        public EmployeeWorkLoadRepository(CRMDBContext context) : base(context)
         {
         }
 

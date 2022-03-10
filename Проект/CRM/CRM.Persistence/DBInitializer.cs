@@ -8,7 +8,7 @@ namespace CRM.Persistence
 {
     public static class DBInitializer
     {
-        public static void Initialize(CRMContext context)
+        public static void Initialize(CRMDBContext context)
         {
             context.Database.EnsureCreated();
             //Scaffold-DbContext -force 'Data Source=LAPTOP-5FUCQ052;Initial Catalog=Call_centerTest; Trusted_Connection=True' Microsoft.EntityFrameworkCore.SqlServer

@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "cwLWc3bQ+VLN5QttD0VJuKNqCof8/Ra73+2+GxEtiWviphIVDSU9trgD4ogref8lFltixSckMV0o04uVSJHnZg==",
+  "dgSpecHash": "fNE/hzvDMrePPBO0/x9qGe3A6pWfZQleBJ2dHEUCOihyjffIs1usFju2r7RDz2XHOwSHXzSxChBCm/4h4/9Deg==",
   "success": true,
   "projectFilePath": "D:\\Для работы\\ASP.NET-Core-CRM\\Проект\\CRM\\CRM.Persistence\\CRM.Persistence.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\andmo\\.nuget\\packages\\castle.core\\4.4.1\\castle.core.4.4.1.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
+    "C:\\Users\\andmo\\.nuget\\packages\\fluentvalidation\\10.3.6\\fluentvalidation.10.3.6.nupkg.sha512",
+    "C:\\Users\\andmo\\.nuget\\packages\\fluentvalidation.dependencyinjectionextensions\\10.3.6\\fluentvalidation.dependencyinjectionextensions.10.3.6.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\microsoft.data.sqlclient\\2.1.4\\microsoft.data.sqlclient.2.1.4.nupkg.sha512",
