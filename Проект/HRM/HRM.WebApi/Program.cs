@@ -39,7 +39,7 @@ using (var scope = host.Services.CreateScope())
         var context = serviceProvider.GetRequiredService<HRMDBContext>();
         DBInitializer.Initialize(context);
     }
-    catch (Exception e) { }
+    catch { }
 }
 
 host.Run();

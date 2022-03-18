@@ -1,8 +1,10 @@
-﻿using HRM.Persistence.Repositories;
+﻿using HRM.Application.BuisnessLogic;
+using HRM.Application.Interfaces;
+using HRM.Persistence.Repositories;
 
 namespace HRM.Persistence
 {
-    public class UnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly HRMDBContext context;
         public UnitOfWork(HRMDBContext _context)
@@ -14,13 +16,16 @@ namespace HRM.Persistence
             DepartmentWorkLoad = new DepartmentWorkLoadRepository(context);
             Employee = new EmployeeRepository(context);
             EmployeeWorkLoad = new EmployeeWorkLoadRepository(context);
+            Period = new PeriodRepository(context);
         }
-        public CandidateRepository Candidate { get; set; }
-        public ContactDataRepository ContactData { get; set; }
-        public DepartmentRepository Department { get; set; }
-        public DepartmentWorkLoadRepository DepartmentWorkLoad { get; set; }
-        public EmployeeRepository Employee { get; set; }
-        public EmployeeWorkLoadRepository EmployeeWorkLoad { get; set; }
+
+        public ICandidateRepository Candidate { get ; set; }
+        public IContactDataRepository ContactData { get; set; }
+        public IDepartmentRepository Department { get; set; }
+        public IDepartmentWorkLoadRepository DepartmentWorkLoad { get; set; }
+        public IEmployeeRepository Employee { get; set; }
+        public IEmployeeWorkLoadRepository EmployeeWorkLoad { get; set; }
+        public IPeriodRepository Period { get; set; }
 
         public async Task Save()
         {

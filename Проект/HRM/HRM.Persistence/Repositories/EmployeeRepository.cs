@@ -1,4 +1,4 @@
-﻿using HRM.Application.BusinessLogic.Employees;
+﻿using HRM.Application.BuisnessLogic;
 using HRM.Domain;
 using HRM.Persistence.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
@@ -14,6 +14,11 @@ namespace HRM.Persistence.Repositories
         public IEnumerable<Employee> GetActive()
         {
             return context.Employees.Where(x=>x.Active == true);
+        }
+
+        public IEnumerable<Employee> GetActiveByDepartmentId(int id)
+        {
+            return context.Employees.Where(x => x.Active == true && x.DepartmentId == id);
         }
 
         public IEnumerable<Employee> GetAuthorizer()

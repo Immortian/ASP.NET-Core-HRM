@@ -1,4 +1,4 @@
-﻿namespace HRM.Persistence.Repositories.Base
+﻿namespace HRM.Application.BuisnessLogic.Base
 {
     public interface IRepositoryBase<T>
     {

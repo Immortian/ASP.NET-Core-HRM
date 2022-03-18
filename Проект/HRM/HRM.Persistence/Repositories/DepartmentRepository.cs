@@ -1,4 +1,4 @@
-﻿using HRM.Application.BusinessLogic.Departments;
+﻿using HRM.Application.BuisnessLogic;
 using HRM.Domain;
 using HRM.Persistence.Repositories.Base;
 using Microsoft.EntityFrameworkCore;
