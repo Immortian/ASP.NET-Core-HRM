@@ -55,7 +55,12 @@
       "ProjectGuid": "67a8ec9c-aa23-44ca-9865-2952165f6457",
       "DisplayName": "HRM.Application",
       "ColorIndex": 9
+    },
+    "22e5b858-d4a3-4656-a285-b9cf38d61bf9": {
+      "ProjectGuid": "22e5b858-d4a3-4656-a285-b9cf38d61bf9",
+      "DisplayName": "HRM.Domain",
+      "ColorIndex": 10
     }
   },
-  "NextColorIndex": 10
+  "NextColorIndex": 11
 }

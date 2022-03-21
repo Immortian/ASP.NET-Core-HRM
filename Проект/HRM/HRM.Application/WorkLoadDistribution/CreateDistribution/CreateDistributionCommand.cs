@@ -3,6 +3,6 @@
     public class CreateDistributionCommand
     {
         public int MonthlyHours { get; set; }
-        public List<DistributionOption> Options { get; set; }
+        public List<DistributionOption>? Options { get; set; }
     }
 }
