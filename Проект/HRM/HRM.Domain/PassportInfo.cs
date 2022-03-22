@@ -9,6 +9,7 @@ namespace HRM.Domain
         {
             Candidates = new HashSet<Candidate>();
             Employees = new HashSet<Employee>();
+            Dismissals = new HashSet<Dismissal>();
         }
 
         public int PassportId { get; set; }
@@ -27,5 +28,6 @@ namespace HRM.Domain
 
         public virtual ICollection<Candidate> Candidates { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
+        public virtual ICollection<Dismissal> Dismissals { get; set; }
     }
 }

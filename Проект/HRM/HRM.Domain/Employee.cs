@@ -9,7 +9,6 @@ namespace HRM.Domain
         {
             Authorizations = new HashSet<Authorization>();
             Departments = new HashSet<Department>();
-            Dismissals = new HashSet<Dismissal>();
             EmployeeWorkLoads = new HashSet<EmployeeWorkLoad>();
             PersonalAchievements = new HashSet<PersonalAchievement>();
         }
@@ -28,7 +27,6 @@ namespace HRM.Domain
         public virtual PassportInfo Passport { get; set; } = null!;
         public virtual ICollection<Authorization> Authorizations { get; set; }
         public virtual ICollection<Department> Departments { get; set; }
-        public virtual ICollection<Dismissal> Dismissals { get; set; }
         public virtual ICollection<EmployeeWorkLoad> EmployeeWorkLoads { get; set; }
         public virtual ICollection<PersonalAchievement> PersonalAchievements { get; set; }
     }

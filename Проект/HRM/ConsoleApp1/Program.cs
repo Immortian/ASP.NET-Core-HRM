@@ -16,6 +16,7 @@ var candidates = context.Candidate.GetInterviewed().Result;
 //{
 //    Console.WriteLine(candidate.Passport.Name);
 //}
+
 CreateDistributionCommandHandler distrib = new CreateDistributionCommandHandler(context);
 await distrib.Distribute(new CreateDistributionCommand()
 {

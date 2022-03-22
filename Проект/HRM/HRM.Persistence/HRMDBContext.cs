@@ -34,7 +34,7 @@ namespace HRM.Persistence
             {
                 optionsBuilder
                     //.UseLazyLoadingProxies() вместо этого modelBuilder.Entity<...>.Navigation("...").AutoInclude()
-                    .UseSqlServer("Data Source=LAPTOP-5FUCQ052; Trusted_Connection=True; MultipleActiveResultSets=True; Initial Catalog=Call_centerTest");
+                    .UseSqlServer("Data Source=LAPTOP-5FUCQ052; Trusted_Connection=True; MultipleActiveResultSets=True; Initial Catalog=HRM");
             }
         }
 
@@ -114,7 +114,6 @@ namespace HRM.Persistence
                     .HasMaxLength(12)
                     .HasColumnName("Phone_number");
 
-                //entity.Navigation(x => x.Candidate).AutoInclude();
             });
 
             modelBuilder.Entity<Department>(entity =>
@@ -194,14 +193,14 @@ namespace HRM.Persistence
                     .HasColumnType("date")
                     .HasColumnName("Document_date");
 
-                entity.Property(e => e.EmployeeId).HasColumnName("Employee_id");
+                entity.Property(e => e.PassportId).HasColumnName("Passport_id");
 
-                entity.HasOne(d => d.Employee)
+                entity.HasOne(d => d.Passport)
                     .WithMany(p => p.Dismissals)
-                    .HasForeignKey(d => d.EmployeeId)
-                    .HasConstraintName("FK_Dismissal_Employee");
+                    .HasForeignKey(d => d.DismissalId)
+                    .HasConstraintName("FK_Dismissal_Passport_info");
 
-                //entity.Navigation(x => x.Passport).AutoInclude(); обновить модель
+                entity.Navigation(x => x.Passport).AutoInclude();
             });
 
             modelBuilder.Entity<Document>(entity =>
