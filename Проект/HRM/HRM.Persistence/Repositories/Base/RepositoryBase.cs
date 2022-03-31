@@ -21,7 +21,7 @@ namespace HRM.Persistence.Repositories.Base
         public async Task DeleteAsync(T entity)
         {
             context.Set<T>().Remove(entity);
-            await context.SaveChangesAsync();
+            //await context.SaveChangesAsync();
         }
 
         public virtual async Task<List<T>> GetAllAsync()
@@ -29,16 +29,15 @@ namespace HRM.Persistence.Repositories.Base
             return await context.Set<T>().ToListAsync();
         }
 
-        public virtual async Task<T> GetByIdAsync(int id)
+        public virtual async Task<T?> GetByIdAsync(int id)
         {
             return await context.Set<T>().FindAsync(id);
         }
 
-        public async Task<T> UpdateAsync(T entity)
+        public async Task UpdateAsync(T entity)
         {
             context.Set<T>().Update(entity);
-            await context.SaveChangesAsync();
-            return entity;
+            //await context.SaveChangesAsync();
         }
     }
 }

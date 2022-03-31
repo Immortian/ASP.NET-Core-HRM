@@ -10,5 +10,7 @@ namespace HRM.Application.BuisnessLogic
         IEnumerable<Employee> GetWithMissingContactData();
         IEnumerable<Employee> GetAuthorizer();
         IEnumerable<Employee> GetUnauthorized();
+        IEnumerable<Employee> GetActiveWithNoWorkLoadByPeriodId(int periodId);
+        IEnumerable<Employee> GetActiveWithNoWorkLoadByPeriodIdPerDepartment(int periodId, int departmentId);
     }
 }

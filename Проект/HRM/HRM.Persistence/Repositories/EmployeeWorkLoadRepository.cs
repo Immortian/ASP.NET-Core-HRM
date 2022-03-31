@@ -11,6 +11,16 @@ namespace HRM.Persistence.Repositories
         {
         }
 
+        public IEnumerable<EmployeeWorkLoad> GetByPeriodId(int periodId)
+        {
+            return context.EmployeeWorkLoads.Where(x=>x.PeriodId == periodId);
+        }
+
+        public IEnumerable<EmployeeWorkLoad> GetByPeriodIdPerDepartment(int periodId, int departmentId)
+        {
+            return context.EmployeeWorkLoads.Where(x=>x.PeriodId == periodId && x.Employee.DepartmentId == departmentId);
+        }
+
         public IEnumerable<EmployeeWorkLoad> GetWithNotEnoughHours()
         {
             return context.EmployeeWorkLoads.Where(x => x.WorkLoadHours >= x.WorkLoadHours);
@@ -27,7 +37,7 @@ namespace HRM.Persistence.Repositories
         {
             return (int)context.EmployeeWorkLoads
                 .Where(x => 
-                    x.Employee.Department.DepartmentId == departmentId && 
+                    x.Employee.DepartmentId == departmentId && 
                     x.PeriodId == periodId)
                 .Sum(x => x.WorkLoadHours);
         }

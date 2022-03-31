@@ -17,6 +17,7 @@ if(host.Environment.IsDevelopment())
 {
     host.UseDeveloperExceptionPage();
 }
+
 host.UseSwagger();
 
 host.UseSwaggerUI(Config =>

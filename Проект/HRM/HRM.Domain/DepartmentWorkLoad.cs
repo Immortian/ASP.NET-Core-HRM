@@ -8,8 +8,8 @@ namespace HRM.Domain
         public int ScheduleId { get; set; }
         public int DepartmentId { get; set; }
         public int PeriodId { get; set; }
-        public double WorkLoad { get; set; }
-        public double? WorkedHours { get; set; }
+        public int WorkLoad { get; set; }
+        public int? WorkedHours { get; set; }
         public bool? IsEqualOrMore { get; set; }
 
         public virtual Department Department { get; set; } = null!;

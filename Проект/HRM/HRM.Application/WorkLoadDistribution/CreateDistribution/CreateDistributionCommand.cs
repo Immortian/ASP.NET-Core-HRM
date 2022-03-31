@@ -1,8 +1,6 @@
 ﻿namespace HRM.Application.WorkLoadDistribution.CreateDistribution
 {
-    public class CreateDistributionCommand
+    public class CreateDistributionCommand : DistributionCommand
     {
-        public int MonthlyHours { get; set; }
-        public List<DistributionOption>? Options { get; set; }
     }
 }

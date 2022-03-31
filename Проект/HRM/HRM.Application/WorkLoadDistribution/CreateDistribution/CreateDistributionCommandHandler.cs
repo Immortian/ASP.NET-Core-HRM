@@ -7,30 +7,39 @@ namespace HRM.Application.WorkLoadDistribution.CreateDistribution
     public class CreateDistributionCommandHandler
     {
         private IUnitOfWork unitOfWork;
+        private CommandValidation validation;
+        private DistributionLogic logic;
         Period current;
         public CreateDistributionCommandHandler(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
+            validation = new CommandValidation(unitOfWork);
+            logic = new DistributionLogic(unitOfWork);
             current = unitOfWork.Period.Next();
         }
         public async Task Distribute(CreateDistributionCommand request)
         {
-            if (!ValidateStatic(request.MonthlyHours, current) || !ValidateOptions(request.Options, current))
-                throw new ValidationExeption(nameof(CreateDistributionCommand));
-                
             await unitOfWork.Period.CreateAsync(current);
             current.TotalWorkLoadHours = request.MonthlyHours;
 
             if (request.Options == null)
             {
-                await StaticDistribute(request);
+                if (validation.ValidateStatic(request.MonthlyHours, current))
+                    await StaticDistribute(request);
+                else
+                    throw new ValidationExeption(nameof(CreateDistributionCommand));
             }
             else
-                await DinamicDistribute(request);
+            {
+                if(validation.ValidateOptions(request.Options, current))
+                    await DinamicDistribute(request);
+                else
+                    throw new ValidationExeption(nameof(CreateDistributionCommand));
+            }
         }
         private async Task StaticDistribute(CreateDistributionCommand request)
         {
-            int hoursPerEmployee = DistributedHours(request.MonthlyHours);
+            int hoursPerEmployee = logic.DistributedHours(request.MonthlyHours);
             foreach (var employee in unitOfWork.Employee.GetActive())
             {
                 employee.EmployeeWorkLoads.Add(new EmployeeWorkLoad
@@ -50,14 +59,14 @@ namespace HRM.Application.WorkLoadDistribution.CreateDistribution
                     WorkLoad = unitOfWork.EmployeeWorkLoad.SumPeriodWorkLoadHoursByDepartmentId(current.PeriodId,department.DepartmentId),
                 });
             }
-            await FinalSum();
+            await logic.FinalSum(current);
             await unitOfWork.Save();
         }
         private async Task DinamicDistribute(CreateDistributionCommand request)
         {
             foreach (var option in request.Options)
             {
-                int hoursPerDepartmentEmployee = DistributedHours(option.StaticHours, option.DepartmentId);
+                int hoursPerDepartmentEmployee = logic.DistributedHours(option.StaticHours, option.DepartmentId);
 
                 foreach (var employee in unitOfWork.Employee.GetActiveByDepartmentId(option.DepartmentId))
                 {
@@ -80,70 +89,8 @@ namespace HRM.Application.WorkLoadDistribution.CreateDistribution
                 if (wl.WorkLoad != option.StaticHours) ;
                 //messege округлено
             }
-            await FinalSum();
+            await logic.FinalSum(current);
             await unitOfWork.Save();
-        }
-        private bool ValidateOptions(List<DistributionOption> options, Period period)
-        {
-            if(options == null)
-                return true;
-            foreach (var option in options)
-            {
-                if (!ValidateOption(option, current))
-                    return false;
-            }
-            return true;
-        }
-        private bool ValidateOption(DistributionOption option, Period period)
-        {
-            if (period.Month != 2)
-            {
-                if (option.StaticHours >= unitOfWork.Department.GetByIdAsync(option.DepartmentId).Result.EmployeeCount * 4 * 21 &&
-                    option.StaticHours <= unitOfWork.Department.GetByIdAsync(option.DepartmentId).Result.EmployeeCount * 10 * 25)
-                    return true;
-                else
-                    return false;
-            }
-            else
-            {
-                if (option.StaticHours >= unitOfWork.Department.GetByIdAsync(option.DepartmentId).Result.EmployeeCount * 4 * 20 &&
-                    option.StaticHours <= unitOfWork.Department.GetByIdAsync(option.DepartmentId).Result.EmployeeCount * 10 * 20)
-                    return true;
-                else
-                    return false;
-            }
-        }
-        private bool ValidateStatic(int hours, Period period)
-        {
-            if (period.Month != 2)
-            {
-                if (hours >= unitOfWork.Employee.GetActive().Count() * 4 * 21 &&
-                    hours <= unitOfWork.Employee.GetActive().Count() * 10 * 25)
-                    return true;
-                else
-                    return false;
-            }
-            else
-            {
-                if (hours >= unitOfWork.Employee.GetActive().Count() * 4 * 20 &&
-                    hours <= unitOfWork.Employee.GetActive().Count() * 10 * 20)
-                    return true;
-                else
-                    return false;
-            }
-        }
-        private int DistributedHours(int hours, int departmentId)
-        {
-            return (int)Math.Round((double)hours / unitOfWork.Employee.GetActiveByDepartmentId(departmentId).Count());
-        }
-        private int DistributedHours(int hours)
-        {
-            return (int)Math.Round((double)hours / unitOfWork.Employee.GetActive().Count());
-        }
-        private async Task FinalSum()
-        {
-            current.TotalWorkLoadHours = unitOfWork.EmployeeWorkLoad.SumPeriodWorkLoadHours(current.PeriodId);
-            await unitOfWork.Period.UpdateAsync(current);
         }
     }
 }

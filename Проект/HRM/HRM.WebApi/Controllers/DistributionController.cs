@@ -1,12 +1,8 @@
 ﻿using HRM.Application.Interfaces;
 using HRM.Application.WorkLoadDistribution.CreateDistribution;
+using HRM.Application.WorkLoadDistribution.UpdateDistribution;
 using HRM.Persistence;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HRM.WebApi.Controllers
 {
@@ -16,11 +12,19 @@ namespace HRM.WebApi.Controllers
     public class DistributionController : Controller
     {
         private readonly IUnitOfWork context = new UnitOfWork(new HRMDBContext());
+
         [HttpPost]
         public async Task<IActionResult> Distribute(CreateDistributionCommand request)
         {
-            CreateDistributionCommandHandler distribution = new CreateDistributionCommandHandler(context);
+            var distribution = new CreateDistributionCommandHandler(context);
             await distribution.Distribute(request);
+            return Ok(request);
+        }
+        [HttpPut]
+        public async Task<IActionResult> UpdateDIstribution(UpdateDistributionCommand request)
+        {
+            var distribution = new UpdateDistributionCommandHandler(context);
+            await distribution.UpdateDistribution(request);
             return Ok(request);
         }
     }
