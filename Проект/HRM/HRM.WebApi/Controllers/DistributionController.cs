@@ -21,7 +21,7 @@ namespace HRM.WebApi.Controllers
             return Ok(request);
         }
         [HttpPut]
-        public async Task<IActionResult> UpdateDIstribution(UpdateDistributionCommand request)
+        public async Task<IActionResult> UpdateDistribution(UpdateDistributionCommand request)
         {
             var distribution = new UpdateDistributionCommandHandler(context);
             await distribution.UpdateDistribution(request);

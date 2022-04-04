@@ -28,14 +28,14 @@ namespace HRM.Application.WorkLoadDistribution.UpdateDistribution
                 if (validation.ValidateStatic(request.MonthlyHours, current))
                     await StaticUpdate(request);
                 else
-                    throw new ValidationExeption(nameof(UpdateDistributionCommand));
+                    throw new ValidationException(nameof(UpdateDistributionCommand));
             }
             else
             {
                 if(validation.ValidateOptions(request.Options, current))
                     await DinamicUpdate(request);
                 else
-                    throw new ValidationExeption(nameof(UpdateDistributionCommand));
+                    throw new ValidationException(nameof(UpdateDistributionCommand));
             }
         }
 

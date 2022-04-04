@@ -13,7 +13,7 @@ namespace HRM.WebApi.Controllers
         [HttpGet]
         public async Task<ActionResult<List<Candidate>>> GetAll()
         {
-            var res = await context.Candidate.GetByIdAsync(1);
+            var res = await context.Candidate.GetAllAsync();
             return Ok(res);
         }
         //[HttpGet]

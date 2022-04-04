@@ -1,0 +1,32 @@
+﻿@page "/candidate"
+
+<PageTitle>Candidate</PageTitle>
+
+<h1>Candidates</h1>
+
+<table>
+    @foreach(Candidate current in candidates)
+    {
+        <tr>
+            <td>
+                <p>@current.Passport.Surname</p>
+                <p>@current.Passport.Name</p>
+                <p>@current.Passport.Lastname</p>
+            </td>
+            <td>
+                <p>@current.ContactData.PhoneNumber</p>
+            </td>
+        </tr>
+    }
+</table>
+@code {
+    List<Candidate>? candidates;
+    protected override async Task OnInitializedAsync()
+    {
+        using HttpClient client = new HttpClient()
+            {
+                BaseAddress = new Uri("https://localhost:44355/api")
+            };
+        candidates = await client.GetFromJsonAsync<List<Candidate?>>("Candidate");
+    }
+}

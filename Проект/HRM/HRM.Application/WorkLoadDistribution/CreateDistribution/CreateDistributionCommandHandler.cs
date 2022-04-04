@@ -27,14 +27,14 @@ namespace HRM.Application.WorkLoadDistribution.CreateDistribution
                 if (validation.ValidateStatic(request.MonthlyHours, current))
                     await StaticDistribute(request);
                 else
-                    throw new ValidationExeption(nameof(CreateDistributionCommand));
+                    throw new ValidationException(nameof(CreateDistributionCommand));
             }
             else
             {
                 if(validation.ValidateOptions(request.Options, current))
                     await DinamicDistribute(request);
                 else
-                    throw new ValidationExeption(nameof(CreateDistributionCommand));
+                    throw new ValidationException(nameof(CreateDistributionCommand));
             }
         }
         private async Task StaticDistribute(CreateDistributionCommand request)
