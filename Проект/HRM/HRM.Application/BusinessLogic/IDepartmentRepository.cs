@@ -5,6 +5,6 @@ namespace HRM.Application.BuisnessLogic
 {
     public interface IDepartmentRepository : IRepositoryBase<Department>
     {
-
+        bool IsEmployeeManager(int employeeId);
     }
 }

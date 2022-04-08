@@ -1,4 +1,5 @@
 ﻿// See https://aka.ms/new-console-template for more information
+using HRM.Application.Authorization.Registration;
 using HRM.Application.Interfaces;
 using HRM.Application.WorkLoadDistribution.CreateDistribution;
 using HRM.Domain;
@@ -16,22 +17,39 @@ var candidates = context.Candidate.GetInterviewed().Result;
 //{
 //    Console.WriteLine(candidate.Passport.Name);
 //}
+await TestRegistrationAsync();
 
-CreateDistributionCommandHandler distrib = new CreateDistributionCommandHandler(context);
-await distrib.Distribute(new CreateDistributionCommand()
+
+async Task TestDistributeAsync()
 {
-    MonthlyHours = 9000,
-    Options = new List<HRM.Application.WorkLoadDistribution.DistributionOption>
+    CreateDistributionCommandHandler distrib = new CreateDistributionCommandHandler(context);
+    await distrib.Distribute(new CreateDistributionCommand()
     {
-        new HRM.Application.WorkLoadDistribution.DistributionOption()
+        MonthlyHours = 16000,
+        Options = new List<HRM.Application.WorkLoadDistribution.DistributionOption>
         {
-            StaticHours = 4200,
-            DepartmentId = 1,
-        },
-        new HRM.Application.WorkLoadDistribution.DistributionOption()
-        {
-            StaticHours = 4800,
-            DepartmentId = 2
+            new HRM.Application.WorkLoadDistribution.DistributionOption()
+            {
+                StaticHours = 7200,
+                DepartmentId = 1,
+            },
+            new HRM.Application.WorkLoadDistribution.DistributionOption()
+            {
+                StaticHours = 8800,
+                DepartmentId = 2
+            }
         }
-    }
-});
+    });
+}
+
+async Task TestRegistrationAsync()
+{
+    RegistrationCommandHandler reg = new RegistrationCommandHandler(context);
+    await reg.Registration(new RegistrationCommand()
+    {
+        Username = "admin",
+        Password = "12345",
+        AuthCode = "05f04074-a0d2-4abd-a039-72e3e8336f40"
+    });
+    await context.Authorization.GetAllAsync();
+}

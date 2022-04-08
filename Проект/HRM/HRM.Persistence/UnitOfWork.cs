@@ -10,6 +10,7 @@ namespace HRM.Persistence
         public UnitOfWork(HRMDBContext _context)
         {
             context = _context;
+            Authorization = new AuthorizationRepository(context);
             Candidate = new CandidateRepository(context);
             ContactData = new ContactDataRepository(context);
             Department = new DepartmentRepository(context);
@@ -26,6 +27,7 @@ namespace HRM.Persistence
         public IEmployeeRepository Employee { get; set; }
         public IEmployeeWorkLoadRepository EmployeeWorkLoad { get; set; }
         public IPeriodRepository Period { get; set; }
+        public IAuthorizationRepository Authorization { get; set; }
 
         public async Task Save()
         {

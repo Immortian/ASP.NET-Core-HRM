@@ -1,4 +1,4 @@
-﻿using HRM.Application.Exeptions;
+﻿using HRM.Application.Exceptions;
 using HRM.Application.Interfaces;
 using HRM.Domain;
 

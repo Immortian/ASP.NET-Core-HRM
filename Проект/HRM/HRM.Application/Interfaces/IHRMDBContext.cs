@@ -5,7 +5,7 @@ namespace HRM.Application.Interfaces
 {
     public interface IHRMDBContext 
     {
-        public DbSet<Authorization> Authorizations { get; set; }
+        public DbSet<Domain.Authorization> Authorizations { get; set; }
         public DbSet<Candidate> Candidates { get; set; }
         public DbSet<ContactData> ContactData { get; set; }
         public DbSet<Department> Departments { get; set; }

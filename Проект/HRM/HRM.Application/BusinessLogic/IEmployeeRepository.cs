@@ -7,6 +7,7 @@ namespace HRM.Application.BuisnessLogic
     {
         IEnumerable<Employee> GetActive();
         IEnumerable<Employee> GetActiveByDepartmentId(int id);
+        Employee GetByAuthCode(string authCode);
         IEnumerable<Employee> GetWithMissingContactData();
         IEnumerable<Employee> GetAuthorizer();
         IEnumerable<Employee> GetUnauthorized();

@@ -36,6 +36,11 @@ namespace HRM.Persistence.Repositories
             return context.Employees.Where(x => x.Authorizations.Any());
         }
 
+        public Employee GetByAuthCode(string authCode)
+        {
+            return context.Employees.Where(x=>x.AuthorizationCode == authCode && !x.Authorizations.Any()).FirstOrDefault();
+        }
+
         public IEnumerable<Employee> GetUnauthorized()
         {
             return context.Employees.Where(x => !x.Authorizations.Any());

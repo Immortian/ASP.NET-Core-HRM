@@ -10,5 +10,15 @@ namespace HRM.Persistence.Repositories
         public DepartmentRepository(HRMDBContext context) : base(context)
         {
         }
+
+        public bool IsEmployeeManager(int employeeId)
+        {
+            foreach(var dep in context.Departments.ToList())
+            {
+                if(dep.ManagerId == employeeId)
+                    return true;
+            }
+            return false;
+        }
     }
 }
