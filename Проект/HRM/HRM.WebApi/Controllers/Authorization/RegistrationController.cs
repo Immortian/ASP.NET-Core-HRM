@@ -3,10 +3,10 @@ using HRM.Application.Interfaces;
 using HRM.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
-namespace HRM.WebApi.Controllers
+namespace HRM.WebApi.Controllers.Authorization
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/authorization/[controller]")]
     public class RegistrationController : Controller
     {
         private readonly IUnitOfWork context = new UnitOfWork(new HRMDBContext());
