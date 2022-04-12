@@ -1,4 +1,5 @@
 ﻿using HRM.Application.BuisnessLogic;
+using HRM.Application.BusinessLogic;
 
 namespace HRM.Application.Interfaces
 {
@@ -11,6 +12,7 @@ namespace HRM.Application.Interfaces
          IDepartmentWorkLoadRepository DepartmentWorkLoad { get; set; }
          IEmployeeRepository Employee { get; set; }
          IEmployeeWorkLoadRepository EmployeeWorkLoad { get; set; }
+         IInterviewRepository Interview { get; set; }
          IPeriodRepository Period { get; set; }
          Task Save();
     }

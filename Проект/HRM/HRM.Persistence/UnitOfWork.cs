@@ -1,4 +1,5 @@
 ﻿using HRM.Application.BuisnessLogic;
+using HRM.Application.BusinessLogic;
 using HRM.Application.Interfaces;
 using HRM.Persistence.Repositories;
 
@@ -18,6 +19,7 @@ namespace HRM.Persistence
             Employee = new EmployeeRepository(context);
             EmployeeWorkLoad = new EmployeeWorkLoadRepository(context);
             Period = new PeriodRepository(context);
+            Interview = new InterviewRepository(context);
         }
 
         public ICandidateRepository Candidate { get ; set; }
@@ -28,6 +30,7 @@ namespace HRM.Persistence
         public IEmployeeWorkLoadRepository EmployeeWorkLoad { get; set; }
         public IPeriodRepository Period { get; set; }
         public IAuthorizationRepository Authorization { get; set; }
+        public IInterviewRepository Interview { get; set; }
 
         public async Task Save()
         {

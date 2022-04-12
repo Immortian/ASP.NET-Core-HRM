@@ -7,5 +7,6 @@ namespace HRM.Application.BuisnessLogic
     {
         Task<List<Candidate>> GetNotInterviewed();
         Task<List<Candidate>> GetInterviewed();
+        bool IsInterviewed(int candidateId);
     }
 }
