@@ -26,7 +26,7 @@ namespace HRM.Persistence.Repositories.Base
 
         public virtual async Task<List<T>> GetAllAsync()
         {
-            return await context.Set<T>().ToListAsync();
+            return await context.Set<T>().AsNoTracking().ToListAsync();
         }
 
         public virtual async Task<T?> GetByIdAsync(int id)

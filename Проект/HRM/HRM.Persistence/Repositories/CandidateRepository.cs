@@ -14,7 +14,8 @@ namespace HRM.Persistence.Repositories
         {
             return await context.Interviews.Select(x=>x.Candidate)
                 .OrderBy(x => x.Passport.Surname)
-                .AsNoTracking().ToListAsync();
+                .AsNoTracking()
+                .ToListAsync();
         }
 
         public async Task<List<Candidate>> GetNotInterviewed()
@@ -22,6 +23,7 @@ namespace HRM.Persistence.Repositories
             return await context.Candidates
                 .OrderBy(x => x.Passport.Surname)
                 .Where(x => !(x.Interviews.Any()))
+                .AsNoTracking()
                 .ToListAsync();
         }
 

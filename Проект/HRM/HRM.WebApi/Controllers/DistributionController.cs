@@ -1,6 +1,8 @@
 ﻿using HRM.Application.Interfaces;
 using HRM.Application.WorkLoadDistribution.CreateDistribution;
+using HRM.Application.WorkLoadDistribution.ReadDistribution;
 using HRM.Application.WorkLoadDistribution.UpdateDistribution;
+using HRM.Domain;
 using HRM.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
@@ -26,6 +28,20 @@ namespace HRM.WebApi.Controllers
             var distribution = new UpdateDistributionCommandHandler(context);
             await distribution.UpdateDistribution(request);
             return Ok(request);
+        }
+        [HttpGet("Employee")]
+        public async Task<ActionResult<EmployeeWorkLoad>> CheckEmployeeStatistics()
+        {
+            var distribution = new ReadDistributionCommandHandler(context);
+            var res = await distribution.ReadEmployeeWorkLoads(DateTime.Now);
+            return Ok(res);
+        }
+        [HttpGet("Department")]
+        public async Task<ActionResult<DepartmentWorkLoad>> CheckDepartmentStatistics()
+        {
+            var distribution = new ReadDistributionCommandHandler(context);
+            var res = await distribution.ReadDepartmentWorkLoads(DateTime.Now);
+            return Ok(res);
         }
     }
 }

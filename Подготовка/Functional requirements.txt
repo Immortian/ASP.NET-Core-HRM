@@ -1,21 +1,24 @@
 WebAPI functional requirements:
 
 * Data control functions
-   * Recruiting
-      * CRUD Candidate Info
-      * CRUD Candidate Documents Data
-      * CRD Interview Info
+   * Recruiting							
+      * CRUD Candidate Info					+
+      * CRU Candidate Documents Data
+      * CR Interview Info					+
    * Employee management
-      * CRUD Employee Info
-      * CUD Authorization Info
-      * CRD Dismissal Info
-      * CRD Achievements Data
+      * CRU Employee Info
+      * Acces management
+         * CUD Authorization Info
+         * Login 
+      * CR Dismissal Info
+      * CR Achievements Data
+
    * Employee structuring
       * CRUD Department Info
    * Time management
-      * CRUD Period Info
-      * RUD Department Workload Data
-      * RUD Employee Workload Data
+      * CRU Period Info						+ (distribution)
+      * R Department Workload Data
+      * R Employee Workload Data
 * Statistics functions
    * Recruiting
       * Education level statistics

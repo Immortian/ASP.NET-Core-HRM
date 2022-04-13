@@ -10,22 +10,17 @@ namespace HRM.Persistence.Repositories
         public ContactDataRepository(HRMDBContext context) : base(context)
         {
         }
-        /// <summary>
-        /// не надо дядя
-        /// </summary>
-        /// <returns>ня</returns>
         public IEnumerable<ContactData> GetAllWithMissing()
         {
-            return context.ContactData.Where(a => a.Employees.Any()).Where(x => x.PhoneNumber == null || x.Email == null);
+            return context.ContactData.Where(a => a.Employees.Any()).Where(x => x.PhoneNumber == null || x.Email == null).AsNoTracking();
         }
-        /// <summary>
-        /// не надо дядя
-        /// </summary>
-        /// <returns>ня</returns>
-        /// я вообще **** эти методы, они и не нужны даже
         public IEnumerable<ContactData> GetAllWithMissingByDepartment(int id)
         {
-            return context.ContactData.Where(a => a.Employees.Any()).Where(i => i.Employees.FirstOrDefault().DepartmentId == id).Where(x => x.PhoneNumber == null || x.Email == null);
+            return context.ContactData
+                .Where(a => a.Employees.Any())
+                .Where(i => i.Employees.FirstOrDefault().DepartmentId == id)
+                .Where(x => x.PhoneNumber == null || x.Email == null)
+                .AsNoTracking();
         }
     }
 }

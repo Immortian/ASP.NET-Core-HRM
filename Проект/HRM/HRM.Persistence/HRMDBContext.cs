@@ -62,7 +62,6 @@ namespace HRM.Persistence
                     .OnDelete(DeleteBehavior.Cascade)
                     .HasConstraintName("FK_Authorization_Employee");
 
-                entity.Navigation(x => x.Employee).AutoInclude();
             });
 
             modelBuilder.Entity<Candidate>(entity =>
@@ -271,6 +270,7 @@ namespace HRM.Persistence
 
                 entity.Navigation(x => x.Authorizations).AutoInclude();
                 entity.Navigation(x => x.ContactData).AutoInclude();
+                entity.Navigation(x=>x.Passport).AutoInclude();
             });
 
             modelBuilder.Entity<EmployeeWorkLoad>(entity =>
