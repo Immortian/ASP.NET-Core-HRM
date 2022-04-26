@@ -14,15 +14,13 @@ namespace HRM.Persistence.Repositories
         public IEnumerable<Employee> GetActive()
         {
             return context.Employees
-                .Where(x=>x.Active == true)
-                .AsNoTracking();
+                .Where(x=>x.Active == true);
         }
 
         public IEnumerable<Employee> GetActiveByDepartmentId(int id)
         {
             return context.Employees
-                .Where(x => x.Active == true && x.DepartmentId == id)
-                .AsNoTracking();
+                .Where(x => x.Active == true && x.DepartmentId == id);
         }
 
         public IEnumerable<Employee> GetActiveWithNoWorkLoadByPeriodId(int periodId)

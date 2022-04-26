@@ -14,8 +14,7 @@ namespace HRM.Persistence.Repositories
         public IEnumerable<DepartmentWorkLoad> GetByPeriodId(int periodId)
         {
             return context.DepartmentWorkLoads
-                .Where(x=>x.PeriodId == periodId)
-                .AsNoTracking();
+                .Where(x=>x.PeriodId == periodId);
         }
 
         public DepartmentWorkLoad GetByPeriodIdPerDepartment(int periodId, int departmentId)
@@ -28,8 +27,7 @@ namespace HRM.Persistence.Repositories
         public IEnumerable<DepartmentWorkLoad> GetWithNotEnoughHours()
         {
             return context.DepartmentWorkLoads
-                .Where(x => x.IsEqualOrMore == true)
-                .AsNoTracking();
+                .Where(x => x.IsEqualOrMore == true);
         }
     }
 }

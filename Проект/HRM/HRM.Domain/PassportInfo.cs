@@ -17,7 +17,7 @@ namespace HRM.Domain
         public int PassportNumber { get; set; }
         public string Name { get; set; } = null!;
         public string Surname { get; set; } = null!;
-        public string Lastname { get; set; } = null!;
+        public string? Lastname { get; set; }
         public string? State { get; set; }
         public string Country { get; set; } = null!;
         public string City { get; set; } = null!;
