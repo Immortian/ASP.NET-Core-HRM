@@ -15,16 +15,16 @@ namespace HRM.WebApi.Controllers.Authorization
         [HttpPost("Registration")]
         public async Task<IActionResult> Registration(RegistrationCommand request)
         {
-            RegistrationCommandHandler reg = new RegistrationCommandHandler(context);
-            await reg.Registration(request);
+            var handler = new RegistrationCommandHandler(context);
+            await handler.Registration(request);
             return Ok(request);
         }
 
         [HttpPost("Login")]
         public async Task<ActionResult<string>> Login(LoginCommand request)
         {
-            LoginCommandHandler reg = new LoginCommandHandler(context);
-            int permission = await reg.TryLogin(request);
+            var handler = new LoginCommandHandler(context);
+            int permission = await handler.TryLogin(request);
             if (permission == 3)
                 return ""; //returnUrl to admin home page
             if (permission == 2)

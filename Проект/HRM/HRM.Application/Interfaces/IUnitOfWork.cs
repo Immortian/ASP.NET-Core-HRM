@@ -12,6 +12,7 @@ namespace HRM.Application.Interfaces
          IDepartmentWorkLoadRepository DepartmentWorkLoad { get; set; }
          IEmployeeRepository Employee { get; set; }
          IEmployeeWorkLoadRepository EmployeeWorkLoad { get; set; }
+         IDismissalRepository Dismissal { get; set; }
          IInterviewRepository Interview { get; set; }
          IPeriodRepository Period { get; set; }
          Task Save();

@@ -20,6 +20,7 @@ namespace HRM.Persistence
             EmployeeWorkLoad = new EmployeeWorkLoadRepository(context);
             Period = new PeriodRepository(context);
             Interview = new InterviewRepository(context);
+            Dismissal = new DismissalRepository(context);
         }
 
         public ICandidateRepository Candidate { get ; set; }
@@ -28,6 +29,7 @@ namespace HRM.Persistence
         public IDepartmentWorkLoadRepository DepartmentWorkLoad { get; set; }
         public IEmployeeRepository Employee { get; set; }
         public IEmployeeWorkLoadRepository EmployeeWorkLoad { get; set; }
+        public IDismissalRepository Dismissal{ get; set; }
         public IPeriodRepository Period { get; set; }
         public IAuthorizationRepository Authorization { get; set; }
         public IInterviewRepository Interview { get; set; }

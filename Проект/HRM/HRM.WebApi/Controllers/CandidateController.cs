@@ -1,4 +1,5 @@
-﻿using HRM.Application.Interviewing;
+﻿using HRM.Application.Interfaces;
+using HRM.Application.Interviewing;
 using HRM.Domain;
 using HRM.Persistence;
 using Microsoft.AspNetCore.Mvc;
@@ -9,7 +10,7 @@ namespace HRM.WebApi.Controllers
     [Route("api/[controller]")]
     public class CandidateController : ControllerBase
     {
-        private readonly UnitOfWork context = new UnitOfWork(new HRMDBContext());
+        private readonly IUnitOfWork context = new UnitOfWork(new HRMDBContext());
 
         [HttpGet("all")]
         public async Task<ActionResult<List<Candidate>>> GetAll()
@@ -21,8 +22,8 @@ namespace HRM.WebApi.Controllers
         [HttpPost]
         public async Task<ActionResult> TakeInterview(InterviewingCommand request)
         {
-            InterviewingCommandHandler intrvw = new InterviewingCommandHandler(context);
-            await intrvw.TakeInterview(request);
+            InterviewingCommandHandler handler = new InterviewingCommandHandler(context);
+            await handler.TakeInterview(request);
             return Ok(request);
         }
         [HttpGet("interviewed")]

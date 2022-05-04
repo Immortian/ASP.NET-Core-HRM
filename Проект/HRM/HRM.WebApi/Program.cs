@@ -23,7 +23,7 @@ host.UseSwagger();
 host.UseSwaggerUI(Config =>
 {
     Config.RoutePrefix = string.Empty;
-    Config.SwaggerEndpoint("swagger/v1/swagger.json", "CRM API");
+    Config.SwaggerEndpoint("swagger/v1/swagger.json", "HRM API");
 });
 host.UseRouting();
 

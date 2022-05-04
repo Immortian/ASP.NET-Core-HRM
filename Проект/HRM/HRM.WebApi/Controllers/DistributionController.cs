@@ -18,29 +18,29 @@ namespace HRM.WebApi.Controllers
         [HttpPost]
         public async Task<IActionResult> Distribute(CreateDistributionCommand request)
         {
-            var distribution = new CreateDistributionCommandHandler(context);
-            await distribution.Distribute(request);
+            var handler = new CreateDistributionCommandHandler(context);
+            await handler.Distribute(request);
             return Ok(request);
         }
         [HttpPut]
         public async Task<IActionResult> UpdateDistribution(UpdateDistributionCommand request)
         {
-            var distribution = new UpdateDistributionCommandHandler(context);
-            await distribution.UpdateDistribution(request);
+            var handler = new UpdateDistributionCommandHandler(context);
+            await handler.UpdateDistribution(request);
             return Ok(request);
         }
         [HttpGet("Employee")]
         public async Task<ActionResult<EmployeeWorkLoad>> CheckEmployeeStatistics()
         {
-            var distribution = new ReadDistributionCommandHandler(context);
-            var res = await distribution.ReadEmployeeWorkLoads(DateTime.Now);
+            var handler = new ReadDistributionCommandHandler(context);
+            var res = await handler.ReadEmployeeWorkLoads(DateTime.Now);
             return Ok(res);
         }
         [HttpGet("Department")]
         public async Task<ActionResult<DepartmentWorkLoad>> CheckDepartmentStatistics()
         {
-            var distribution = new ReadDistributionCommandHandler(context);
-            var res = await distribution.ReadDepartmentWorkLoads(DateTime.Now);
+            var handler = new ReadDistributionCommandHandler(context);
+            var res = await handler.ReadDepartmentWorkLoads(DateTime.Now);
             return Ok(res);
         }
     }

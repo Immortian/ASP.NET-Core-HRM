@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ewRwe8M7+R7WtmwXOqC1iRfX5bMmEGu7O+3W5VjT42Dk7yK2gHZsQofYOFOdYHMYQbDZv32Bg4FxvNJVTbwhUQ==",
+  "dgSpecHash": "len3fwTx2R02a8IdNv/4ljtpemsrkE/pbnQgArueqqU9vd/yi3LXwr9Vhh6X92/6gg3GeSK+HTLXUsI0qrWl3w==",
   "success": true,
   "projectFilePath": "D:\\Для работы\\ASP.NET-Core-HRM\\Проект\\HRM\\HRM.Application\\HRM.Application.csproj",
   "expectedPackageFiles": [
@@ -22,6 +22,7 @@
     "C:\\Users\\andmo\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\microsoft.win32.systemevents\\4.7.0\\microsoft.win32.systemevents.4.7.0.nupkg.sha512",
+    "C:\\Users\\andmo\\.nuget\\packages\\quartz\\3.4.0\\quartz.3.4.0.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\runtime.native.system.data.sqlclient.sni\\4.7.0\\runtime.native.system.data.sqlclient.sni.4.7.0.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-arm64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",
     "C:\\Users\\andmo\\.nuget\\packages\\runtime.win-x64.runtime.native.system.data.sqlclient.sni\\4.4.0\\runtime.win-x64.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512",

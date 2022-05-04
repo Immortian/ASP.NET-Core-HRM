@@ -177,7 +177,6 @@ namespace HRM.Persistence
                 entity.ToTable("Dismissal");
 
                 entity.Property(e => e.DismissalId)
-                    .ValueGeneratedNever()
                     .HasColumnName("Dismissal_id");
 
                 entity.Property(e => e.DismissalDate)
@@ -196,7 +195,7 @@ namespace HRM.Persistence
 
                 entity.HasOne(d => d.Passport)
                     .WithMany(p => p.Dismissals)
-                    .HasForeignKey(d => d.DismissalId)
+                    .HasForeignKey(d => d.PassportId)
                     .HasConstraintName("FK_Dismissal_Passport_info");
 
                 entity.Navigation(x => x.Passport).AutoInclude();
