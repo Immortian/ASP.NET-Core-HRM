@@ -37,6 +37,19 @@ namespace HRM.Persistence.Repositories
                 .Any());
         }
 
+        public string GetAddress(Employee employee)
+        {
+            return string.Join(", ",
+                new string[]
+                {
+                    employee.Passport.City,
+                    employee.Passport.Street,
+                    "д." + employee.Passport.House.ToString(),
+                    "к." + employee.Passport.Buinding.ToString(),
+                    "кв." + employee.Passport.Apartment.ToString()
+                });
+        }
+
         public IEnumerable<Employee> GetAuthorizer()
         {
             return context.Employees
@@ -49,6 +62,23 @@ namespace HRM.Persistence.Repositories
             return context.Employees
                 .Where(x=>x.AuthorizationCode == authCode && !x.Authorizations.Any())
                 .FirstOrDefault();
+        }
+
+        public string GetFullName(Employee employee)
+        {
+            return string.Join(" ", new string[]
+            {
+                employee.Passport.Surname,
+                employee.Passport.Name,
+                employee.Passport.Lastname == null? "": employee.Passport.Lastname 
+            });
+        }
+
+        public string GetInits(Employee employee)
+        {
+            return string.Join(" ", new string[]{ employee.Passport.Surname,
+                    string.Join(".", new string[]{ employee.Passport.Name[0].ToString(),
+                employee.Passport.Lastname == null ? "": employee.Passport.Lastname[0].ToString()}) });
         }
 
         public IEnumerable<Employee> GetUnauthorized()
@@ -64,5 +94,7 @@ namespace HRM.Persistence.Repositories
                 .Where(x => x.ContactData.PhoneNumber != null && x.ContactData.Email != null)
                 .AsNoTracking();
         }
+
+        
     }
 }

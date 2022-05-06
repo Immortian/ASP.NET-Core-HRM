@@ -10,7 +10,11 @@ namespace HRM.WebApi.Controllers
     [Route("api/[controller]")]
     public class CandidateController : ControllerBase
     {
-        private readonly IUnitOfWork context = new UnitOfWork(new HRMDBContext());
+        private readonly IUnitOfWork context;
+        public CandidateController(IUnitOfWork context)
+        {
+            this.context = context;
+        }
 
         [HttpGet("all")]
         public async Task<ActionResult<List<Candidate>>> GetAll()

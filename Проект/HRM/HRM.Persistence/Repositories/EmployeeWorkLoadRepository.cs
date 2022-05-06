@@ -14,7 +14,8 @@ namespace HRM.Persistence.Repositories
         public IEnumerable<EmployeeWorkLoad> GetByPeriodId(int periodId)
         {
             return context.EmployeeWorkLoads
-                .Where(x => x.PeriodId == periodId);
+                .Where(x => x.PeriodId == periodId)
+                .ToArray();
         }
 
         public IEnumerable<EmployeeWorkLoad> GetByPeriodIdPerDepartment(int periodId, int departmentId)

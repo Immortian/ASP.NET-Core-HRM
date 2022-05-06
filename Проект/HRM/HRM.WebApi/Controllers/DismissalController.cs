@@ -9,7 +9,11 @@ namespace HRM.WebApi.Controllers
     [Route("api/[controller]")]
     public class DismissalController : ControllerBase
     {
-        private readonly IUnitOfWork context = new UnitOfWork(new HRMDBContext());
+        private readonly IUnitOfWork context;
+        public DismissalController(IUnitOfWork context)
+        {
+            this.context = context;
+        }
         [HttpDelete]
         public async Task<IActionResult> DismissEmployee(DismissingCommand request)
         {

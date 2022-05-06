@@ -2,6 +2,8 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using HRM.Application.Interfaces;
+using HRM.Application.BusinessLogic;
+using HRM.Persistence.Repositories;
 
 namespace HRM.Persistence
 {
@@ -16,6 +18,9 @@ namespace HRM.Persistence
             });
             services.AddScoped<IHRMDBContext>(provider =>
                 provider.GetService<HRMDBContext>());
+
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            //services.AddTransient<IFileRepository, FileRepository>();
 
             return services;
         }

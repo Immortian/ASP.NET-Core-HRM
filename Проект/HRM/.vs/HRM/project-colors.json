@@ -60,7 +60,17 @@
       "ProjectGuid": "22e5b858-d4a3-4656-a285-b9cf38d61bf9",
       "DisplayName": "HRM.Domain",
       "ColorIndex": 10
+    },
+    "1eb6827a-dd7a-4615-8c9d-2932743e34af": {
+      "ProjectGuid": "1eb6827a-dd7a-4615-8c9d-2932743e34af",
+      "DisplayName": "HRM.Web",
+      "ColorIndex": 11
+    },
+    "0b9bbda3-19c3-4e66-883e-de932fd720e4": {
+      "ProjectGuid": "0b9bbda3-19c3-4e66-883e-de932fd720e4",
+      "DisplayName": "HRM.Tests",
+      "ColorIndex": 12
     }
   },
-  "NextColorIndex": 11
+  "NextColorIndex": 13
 }

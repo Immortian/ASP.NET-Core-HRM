@@ -37,5 +37,10 @@ namespace HRM.Persistence.Repositories
         {
             return context.Periods.Where(x => x.Year == date.Year && x.Month == date.Month).FirstOrDefault();
         }
+
+        public DateTime GetDateFromPeriod(Period period)
+        {
+            return new DateTime(period.Year, period.Month, 1);
+        }
     }
 }

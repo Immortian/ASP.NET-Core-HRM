@@ -28,18 +28,31 @@ namespace HRM.Persistence
         public virtual DbSet<PassportInfo> PassportInfos { get; set; } = null!;
         public virtual DbSet<Period> Periods { get; set; } = null!;
         public virtual DbSet<PersonalAchievement> PersonalAchievements { get; set; } = null!;
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-            if (!optionsBuilder.IsConfigured)
-            {
-                optionsBuilder
-                    //.UseLazyLoadingProxies() вместо этого modelBuilder.Entity<...>.Navigation("...").AutoInclude()
-                    .UseSqlServer("Data Source=LAPTOP-5FUCQ052; Trusted_Connection=True; MultipleActiveResultSets=True; Initial Catalog=HRM");
-            }
-        }
+        public virtual DbSet<CompanyData> CompanyData { get; set; } = null!;
+        public virtual DbSet<Domain.File> Files { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<CompanyData>(entity =>
+            {
+                entity.HasKey(e => e.CompanyName);
+
+                entity.Property(e => e.CompanyAddress).HasMaxLength(100);
+                entity.Property(e => e.CompanyName).HasMaxLength(50);
+                entity.Property(e => e.CAcc).HasMaxLength(20);
+                entity.Property(e => e.BIK).HasMaxLength(9);
+                entity.Property(e => e.PAcc).HasMaxLength(20);
+                entity.Property(e => e.INN).HasMaxLength(20);
+                entity.Property(e => e.DirectorName).HasMaxLength(100);
+                entity.Property(e => e.KPP).HasMaxLength(9);
+                entity.Property(e => e.Bank).HasMaxLength(20);
+            });
+            modelBuilder.Entity<Domain.File>(entity =>
+            {
+                entity.HasKey(e => e.Id);
+
+                entity.Property(e => e.Name).HasMaxLength(50);
+            });
             modelBuilder.Entity<Authorization>(entity =>
             {
                 entity.HasKey(e => e.UserId);
@@ -270,6 +283,7 @@ namespace HRM.Persistence
                 entity.Navigation(x => x.Authorizations).AutoInclude();
                 entity.Navigation(x => x.ContactData).AutoInclude();
                 entity.Navigation(x=>x.Passport).AutoInclude();
+                entity.Navigation(x => x.Interview).AutoInclude();
             });
 
             modelBuilder.Entity<EmployeeWorkLoad>(entity =>

@@ -1,5 +1,7 @@
-﻿using HRM.Application.Exceptions;
+﻿using HRM.Application.BusinessLogic;
+using HRM.Application.Exceptions;
 using HRM.Application.Interfaces;
+using HRM.Application.WorkLoadDistribution.GenerateAddendum;
 using HRM.Domain;
 
 namespace HRM.Application.WorkLoadDistribution.CreateDistribution
@@ -9,12 +11,14 @@ namespace HRM.Application.WorkLoadDistribution.CreateDistribution
         private IUnitOfWork unitOfWork;
         private CommandValidation validation;
         private DistributionLogic logic;
+        private GenerateAddendumCommandHandler handler;
         Period current;
         public CreateDistributionCommandHandler(IUnitOfWork unitOfWork)
         {
             this.unitOfWork = unitOfWork;
             validation = new CommandValidation(unitOfWork);
             logic = new DistributionLogic(unitOfWork);
+            handler = new GenerateAddendumCommandHandler(unitOfWork);
             current = unitOfWork.Period.Next();
         }
         public async Task Distribute(CreateDistributionCommand request)
@@ -78,7 +82,7 @@ namespace HRM.Application.WorkLoadDistribution.CreateDistribution
                     });
                 }
                 await unitOfWork.Save();
-                Department dep = unitOfWork.Department.GetByIdAsync(option.DepartmentId).Result;
+                Department dep = await unitOfWork.Department.GetByIdAsync(option.DepartmentId);
                 var wl = new DepartmentWorkLoad
                 {
                     DepartmentId = dep.DepartmentId,

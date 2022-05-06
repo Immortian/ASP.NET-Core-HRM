@@ -34,6 +34,11 @@ namespace HRM.Persistence.Repositories.Base
             return await context.Set<T>().FindAsync(id);
         }
 
+        public virtual async Task<T?> FirstAsync()
+        {
+            return await context.Set<T>().FirstOrDefaultAsync();
+        }
+
         public async Task UpdateAsync(T entity)
         {
             context.Set<T>().Update(entity);

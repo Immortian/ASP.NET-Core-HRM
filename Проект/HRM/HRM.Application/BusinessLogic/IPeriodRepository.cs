@@ -8,5 +8,6 @@ namespace HRM.Application.BuisnessLogic
         Period Next();
         Period CreateFirst();
         Period GetPeriodByDate(DateTime date);
+        public DateTime GetDateFromPeriod(Period period);
     }
 }

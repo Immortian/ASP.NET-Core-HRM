@@ -10,7 +10,11 @@ namespace HRM.WebApi.Controllers.Authorization
     [Route("api/[controller]")]
     public class AuthorizationController : Controller
     {
-        private readonly IUnitOfWork context = new UnitOfWork(new HRMDBContext());
+        private readonly IUnitOfWork context;
+        public AuthorizationController(IUnitOfWork context)
+        {
+            this.context = context;
+        }
 
         [HttpPost("Registration")]
         public async Task<IActionResult> Registration(RegistrationCommand request)

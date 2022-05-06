@@ -1,5 +1,6 @@
 ﻿using HRM.Domain;
 using Microsoft.EntityFrameworkCore;
+using File = HRM.Domain.File;
 
 namespace HRM.Application.Interfaces
 {
@@ -7,6 +8,7 @@ namespace HRM.Application.Interfaces
     {
         public DbSet<Domain.Authorization> Authorizations { get; set; }
         public DbSet<Candidate> Candidates { get; set; }
+        public DbSet<Domain.CompanyData> CompanyData { get; set; }
         public DbSet<ContactData> ContactData { get; set; }
         public DbSet<Department> Departments { get; set; }
         public DbSet<DepartmentWorkLoad> DepartmentWorkLoads { get; set; }
@@ -18,6 +20,7 @@ namespace HRM.Application.Interfaces
         public DbSet<PassportInfo> PassportInfos { get; set; }
         public DbSet<Period> Periods { get; set; }
         public DbSet<PersonalAchievement> PersonalAchievements { get; set; }
+        public DbSet<File> Files { get; set; }
 
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }

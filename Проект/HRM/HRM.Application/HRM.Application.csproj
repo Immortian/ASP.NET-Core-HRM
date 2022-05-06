@@ -11,6 +11,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.2" />
 	<PackageReference Include="FluentValidation" Version="10.3.6" />
 	<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.6" />
+	<PackageReference Include="Open-XML-SDK" Version="2.9.1" />
 	<PackageReference Include="Quartz" Version="3.4.0" />
   </ItemGroup>
 
