@@ -16,6 +16,15 @@ namespace HRM.Persistence.Repositories
 
         }
 
+        public Task ClearStorage(string path)
+        {
+            foreach(var file in System.IO.Directory.GetFiles(path))
+            {
+                System.IO.File.Delete(file);
+            }
+            return Task.CompletedTask;
+        }
+
         public IEnumerable<Domain.File> GetAllByEmployeeId(int employeeId)
         {
             return context.Files.Where(x => x.EmployeeId == employeeId).AsNoTracking().ToArray();

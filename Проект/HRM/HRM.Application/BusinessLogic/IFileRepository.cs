@@ -14,5 +14,7 @@ namespace HRM.Application.BusinessLogic
         public IEnumerable<File> GetAllByPeriodId(int periodId);
         public File GetOne(int employeeId, int periodId);
         public IEnumerable<File> GetByDepartmentId(int departmentId, int periodId);
+
+        public Task ClearStorage(string path);
     }
 }

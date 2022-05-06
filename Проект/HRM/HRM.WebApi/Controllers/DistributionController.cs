@@ -66,6 +66,7 @@ namespace HRM.WebApi.Controllers
                     WorkLoad = employeeLoad.WorkLoadHours
                 });
             }
+            await context.File.ClearStorage(@"wwwroot/files/");
             return Ok();
         }
         [HttpGet("Addendum/{id}")]
@@ -110,6 +111,7 @@ namespace HRM.WebApi.Controllers
             if (System.IO.File.Exists(tempPath))
             {
                 System.IO.File.Delete(tempPath);
+                context.File.ClearStorage(path + "/");
             }
             return fileStreamResult;
         }
