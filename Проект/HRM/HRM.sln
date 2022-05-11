@@ -21,7 +21,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRM.WebApi", "HRM.WebApi\HR
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRM.Web", "HRM.Web\HRM.Web.csproj", "{1EB6827A-DD7A-4615-8C9D-2932743E34AF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRM.Tests", "HRM.Tests\HRM.Tests.csproj", "{0B9BBDA3-19C3-4E66-883E-DE932FD720E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HRM.Tests", "HRM.Tests\HRM.Tests.csproj", "{0B9BBDA3-19C3-4E66-883E-DE932FD720E4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

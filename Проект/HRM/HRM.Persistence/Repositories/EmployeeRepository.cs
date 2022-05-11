@@ -64,6 +64,13 @@ namespace HRM.Persistence.Repositories
                 .FirstOrDefault();
         }
 
+        public Employee GetByAuthData(string login, string password)
+        {
+            return context.Employees
+                .Where(x => x.Authorizations.FirstOrDefault().Username == login && x.Authorizations.FirstOrDefault().Password == password)
+                .FirstOrDefault();
+        }
+
         public string GetFullName(Employee employee)
         {
             return string.Join(" ", new string[]
