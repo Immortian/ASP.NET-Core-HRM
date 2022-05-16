@@ -1,5 +1,6 @@
 ﻿using HRM.Application.CompanyData;
 using HRM.Application.Interfaces;
+using HRM.Domain;
 using HRM.Persistence;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -26,6 +27,11 @@ namespace HRM.WebApi.Controllers
             var handler = new FillCompanyDataCommandHandler(context);
             await handler.AddOrUpdate(request);
             return Ok(request);
+        }
+        [HttpGet]
+        public async Task<ActionResult<CompanyData>> CheckCompanyData(FillCompanyDataCommand request)
+        {
+            return await context.CompanyData.FirstAsync();
         }
     }
 }

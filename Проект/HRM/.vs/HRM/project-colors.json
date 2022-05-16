@@ -70,7 +70,22 @@
       "ProjectGuid": "0b9bbda3-19c3-4e66-883e-de932fd720e4",
       "DisplayName": "HRM.Tests",
       "ColorIndex": 12
+    },
+    "13d50fc7-b99f-4aa8-93c1-80d526efb885": {
+      "ProjectGuid": "13d50fc7-b99f-4aa8-93c1-80d526efb885",
+      "DisplayName": "HRM.Desktop",
+      "ColorIndex": 13
+    },
+    "e80c43b2-ff04-4281-8f91-cc80cab12978": {
+      "ProjectGuid": "e80c43b2-ff04-4281-8f91-cc80cab12978",
+      "DisplayName": "HRM.Desktop",
+      "ColorIndex": 14
+    },
+    "2fcda910-7f5e-4778-893a-e8e36f6dc3a6": {
+      "ProjectGuid": "2fcda910-7f5e-4778-893a-e8e36f6dc3a6",
+      "DisplayName": "Presentation",
+      "ColorIndex": 15
     }
   },
-  "NextColorIndex": 13
+  "NextColorIndex": 0
 }

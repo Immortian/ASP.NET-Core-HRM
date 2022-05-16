@@ -37,20 +37,22 @@ namespace HRM.WebApi.Controllers
             await handler.UpdateDistribution(request);
             return Ok(request);
         }
-        [HttpGet("Employee")]
-        public async Task<ActionResult<List<EmployeeWorkLoad>>> CheckEmployeeStatistics()
-        {
-            var handler = new ReadDistributionCommandHandler(context);
-            var res = await handler.ReadEmployeeWorkLoads(DateTime.Now);
-            return Ok(res);
-        }
-        [HttpGet("Department")]
-        public async Task<ActionResult<List<DepartmentWorkLoad>>> CheckDepartmentStatistics()
-        {
-            var handler = new ReadDistributionCommandHandler(context);
-            var res = await handler.ReadDepartmentWorkLoads(DateTime.Now);
-            return Ok(res);
-        }
+        //to do: delete
+
+        //[HttpGet("Employee")]
+        //public async Task<ActionResult<List<EmployeeWorkLoad>>> CheckEmployeeStatistics()
+        //{
+        //    var handler = new ReadDistributionCommandHandler(context);
+        //    var res = await handler.ReadEmployeeWorkLoads(DateTime.Now);
+        //    return Ok(res);
+        //}
+        //[HttpGet("Department")]
+        //public async Task<ActionResult<List<DepartmentWorkLoad>>> CheckDepartmentStatistics()
+        //{
+        //    var handler = new ReadDistributionCommandHandler(context);
+        //    var res = await handler.ReadDepartmentWorkLoads(DateTime.Now);
+        //    return Ok(res);
+        //}
 
         [HttpHead("Addendum")]
         public async Task<ActionResult> GenerateAddendum()
