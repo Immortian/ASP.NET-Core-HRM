@@ -10,7 +10,7 @@
       Title="EmployeeAchievmentsPage">
 
     <Grid>
-        <DataGrid x:Name="AchievementsDG" Margin="10,58,10,10" AutoGenerateColumns="False" CanUserAddRows="True" FontSize="14" RowEditEnding="AchievementsDG_RowEditEnding">
+        <DataGrid x:Name="AchievementsDG" Style="{StaticResource RoundedDataGrid}" Margin="10,58,10,10" AutoGenerateColumns="False" CanUserAddRows="True" FontSize="14" RowEditEnding="AchievementsDG_RowEditEnding" Background="#FFEEF9FF">
             <DataGrid.Columns>
                 <DataGridComboBoxColumn Width="*" Header="Сотрудник" ItemsSource="{StaticResource EmployeeList}" DisplayMemberPath="Passport.Inits" SelectedValuePath="EmployeeId" SelectedValueBinding="{Binding EmployeeId}"/>
                 <DataGridTextColumn Width="2*" Header="Описание" Binding="{Binding Description}"/>

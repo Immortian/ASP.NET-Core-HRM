@@ -40,7 +40,7 @@ namespace HRM.Desktop.Pages.AdminNavigation
             var achievmentsResponse = window.client.GetAsync(new Uri("https://localhost:44355/api/Achievements")).Result;
             var achievmentsResponseContent = (List<PersonalAchievement>)JsonConvert.DeserializeObject(achievmentsResponse.Content.ReadAsStringAsync().Result, typeof(List<PersonalAchievement>));
 
-            achievements = new List<PersonalAchievement>();
+            achievements = achievmentsResponseContent;
             AchievementsDG.ItemsSource = achievements;
 
             
@@ -61,7 +61,6 @@ namespace HRM.Desktop.Pages.AdminNavigation
             var stringContent = new StringContent(JsonConvert.SerializeObject(achievements), Encoding.UTF8, "application/json");
 
             var achievmentsResponse = window.client.PutAsync(new Uri("https://localhost:44355/api/Achievements"), stringContent).Result;
-            var achievmentsResponseContent = (List<PersonalAchievement>)JsonConvert.DeserializeObject(achievmentsResponse.Content.ReadAsStringAsync().Result, typeof(List<PersonalAchievement>));
             window.MainFrame.Navigating -= SaveChanges;
         }
         private void AchievementsDG_RowEditEnding(object sender, DataGridRowEditEndingEventArgs e)

@@ -31,12 +31,12 @@
 
         <Label x:Name="NextPeriodLabel" Grid.Row="0" Margin="50,10,0,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource FirstStageLabel}"/>
 
-        <Rectangle Grid.Row="1" Grid.Column="0" Stroke="#FF3CA0DC" Margin="5"></Rectangle>
+        <Rectangle Grid.Row="1" Grid.Column="0" Margin="5" Stroke="#FF3CA0DC" RadiusX="20" RadiusY="20" Fill="#FFEEF9FF"></Rectangle>
         <Label Content="Нагрузка в часах: " HorizontalAlignment="Left" Margin="13,20,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{DynamicResource FirstStageLabel}"/>
         <Label x:Name="LWorkLoad" Content="{Binding ElementName=WorkLoadSlider,Path=Value}" HorizontalAlignment="Left" Height="34" Margin="171,20,0,0" Grid.Row="1" VerticalAlignment="Top" Width="86" Background="{x:Null}" BorderBrush="#FF3CA0DC" Style="{DynamicResource FirstStageLabel}"/>
         <Button x:Name="CreatePeriodButton" Content="Сформировать" Grid.Column="2" Grid.Row="1" Width="150" Height="30" FontSize="18" Margin="58,110,58,10" Background="#FF3CA0DC" Foreground="Black" BorderBrush="{x:Null}" Click="CreatePeriodButton_Click" Style="{DynamicResource ButtonStyle2}" />
 
-        <DataGrid x:Name="DepartmentContextDG" Grid.Row="1" Grid.Column="1" Margin="5" AutoGenerateColumns="False" CanUserAddRows="True">
+        <DataGrid Style="{DynamicResource RoundedDataGrid}" x:Name="DepartmentContextDG" Grid.Row="1" Grid.Column="1" Margin="5" AutoGenerateColumns="False" CanUserAddRows="True" Background="#FFEEF9FF">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Id" Binding="{Binding DepartmentId}" Visibility="Hidden"/>
                 <DataGridComboBoxColumn Header="Отдел" Width="2*" ItemsSource="{StaticResource DepartmentList}" DisplayMemberPath="Direction" TextBinding="{Binding DepartmentTitle}" />

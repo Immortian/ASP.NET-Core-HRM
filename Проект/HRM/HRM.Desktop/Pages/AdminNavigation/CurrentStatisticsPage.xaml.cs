@@ -151,7 +151,11 @@ namespace HRM.Desktop.Pages.AdminNavigation
             var periodResponse = window.client.GetAsync(new Uri(@"https://localhost:44355/api/Statistics/Period/" + Id)).Result;
             var periodResponseContent = (Period)JsonConvert.DeserializeObject(periodResponse.Content.ReadAsStringAsync().Result, typeof(Period));
 
-            GetPeriodContent(periodResponseContent);
+            var previousPeriodResponse = window.client.GetAsync(new Uri(@"https://localhost:44355/api/Statistics/Period/" + (Id - 1))).Result;
+            var previousPeriodResponseContent = (Period)JsonConvert.DeserializeObject(previousPeriodResponse.Content.ReadAsStringAsync().Result, typeof(Period));
+            previousPeriod = previousPeriodResponseContent;
+            currentPeriod = periodResponseContent;
+            GetPeriodContent(currentPeriod);
             GetDepartmentContent();
             GetEmployeeContent();
         }
