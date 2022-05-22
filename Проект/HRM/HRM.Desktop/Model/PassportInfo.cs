@@ -26,6 +26,8 @@ namespace HRM.Desktop.Model
         public int? Buinding { get; set; }
         public int Apartment { get; set; }
 
+        public string Inits { get { return Surname + " " + Name[0] + "." + Lastname[0] + "."; } }
+
         public virtual ICollection<Candidate> Candidates { get; set; }
         public virtual ICollection<Employee> Employees { get; set; }
         public virtual ICollection<Dismissal> Dismissals { get; set; }

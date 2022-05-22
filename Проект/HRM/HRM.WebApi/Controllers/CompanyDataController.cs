@@ -29,7 +29,7 @@ namespace HRM.WebApi.Controllers
             return Ok(request);
         }
         [HttpGet]
-        public async Task<ActionResult<CompanyData>> CheckCompanyData(FillCompanyDataCommand request)
+        public async Task<ActionResult<CompanyData>> CheckCompanyData()
         {
             return await context.CompanyData.FirstAsync();
         }

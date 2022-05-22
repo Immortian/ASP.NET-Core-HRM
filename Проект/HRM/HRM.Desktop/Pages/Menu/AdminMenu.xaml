@@ -21,21 +21,31 @@
             <ColumnDefinition Width="52"/>
         </Grid.ColumnDefinitions>
 
-        <Button x:Name="HomeButton" Grid.Column="0" Margin="5" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="HomeButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/HRM.Desktop;component/Images/ButtonImages/home.png" Stretch="Uniform"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="DepartmentButton" Grid.Column="2" Margin="5" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="DepartmentButton_Click">
-            <Button.Background>
-                <ImageBrush Stretch="Uniform" ImageSource="/HRM.Desktop;component/Images/ButtonImages/group.png"/>
-            </Button.Background>
-        </Button>
-        <Button x:Name="DocumentsButton" Grid.Column="3" Margin="5" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="DocumentsButton_Click">
-            <Button.Background>
-                <ImageBrush Stretch="UniformToFill" ImageSource="/HRM.Desktop;component/Images/ButtonImages/folder.png"/>
-            </Button.Background>
-        </Button>
+        <Grid Grid.Column="0">
+            <Rectangle RadiusX="15" RadiusY="15" Fill="White" Stroke="#FF3CA0DC" Margin="2"/>
+            <Button x:Name="HomeButton" Background="Transparent"  Margin="5" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="HomeButton_Click">
+                <StackPanel>
+                    <Image Source="/HRM.Desktop;component/Images/ButtonImages/home.png" Stretch="Uniform" Width="40" />
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Grid Grid.Column="2">
+            <Rectangle RadiusX="15" RadiusY="15" Fill="White" Stroke="#FF3CA0DC" Margin="2"/>
+            <Button x:Name="DepartmentButton" Margin="5" Background="Transparent" Foreground="{x:Null}" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="DepartmentButton_Click">
+                <StackPanel>
+                    <Image Stretch="Uniform" Source="/HRM.Desktop;component/Images/ButtonImages/group.png" Height="33"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Grid Grid.Column="3">
+            <Rectangle RadiusX="15" RadiusY="15" Fill="White" Stroke="#FF3CA0DC" Margin="2"/>
+            <Button x:Name="DocumentsButton" Background="Transparent" Margin="5" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="DocumentsButton_Click">
+                <StackPanel>
+                    <Image Stretch="Uniform" Source="/HRM.Desktop;component/Images/ButtonImages/folder.png" Height="42"/>
+                </StackPanel>
+            </Button>
+        </Grid>
+
 
         <Button x:Name="SettingsButton" Grid.Column="7" Margin="5" BorderBrush="{x:Null}" Foreground="{x:Null}" Style="{DynamicResource ButtonStyle1}" Click="SettingsButton_Click">
             <Button.Background>
@@ -51,7 +61,7 @@
                 </Style>
             </Button.Resources>
             <Button.Background>
-                <ImageBrush ImageSource="/HRM.Desktop;component/Images/ButtonImages/logout.png" Stretch="UniformToFill"/>
+                <ImageBrush ImageSource="/HRM.Desktop;component/Images/ButtonImages/logout.png" Stretch="Uniform"/>
             </Button.Background>
         </Button>
 

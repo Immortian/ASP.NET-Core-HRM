@@ -106,6 +106,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\AdminNavigation\DocumentDownloadPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\AdminNavigation\EmployeeAchievmentsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\AdminNavigation\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +123,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\Menu\AdminMenu.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\RegistrationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,6 +156,12 @@
     <Compile Include="Pages\AdminNavigation\CurrentStatisticsPage.xaml.cs">
       <DependentUpon>CurrentStatisticsPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AdminNavigation\DocumentDownloadPage.xaml.cs">
+      <DependentUpon>DocumentDownloadPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\AdminNavigation\EmployeeAchievmentsPage.xaml.cs">
+      <DependentUpon>EmployeeAchievmentsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AdminNavigation\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -152,6 +170,9 @@
     </Compile>
     <Compile Include="Pages\Menu\AdminMenu.xaml.cs">
       <DependentUpon>AdminMenu.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\RegistrationPage.xaml.cs">
+      <DependentUpon>RegistrationPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

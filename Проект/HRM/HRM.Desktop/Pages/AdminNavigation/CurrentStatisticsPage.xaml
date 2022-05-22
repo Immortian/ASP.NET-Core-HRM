@@ -23,7 +23,7 @@
 
         <ComboBox x:Name="PeriodCB" FontSize="18" Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" Margin="11,10,10,0" VerticalAlignment="Top" Height="48" Width="246" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF3CA0DC" SelectionChanged="PeriodCB_SelectionChanged"/>
         <Label x:Name="CompanyWorkTimeLabel" Grid.Row="1" Grid.Column="0" Margin="5,0" Content="Цель на текущий период:" VerticalAlignment="Top" Height="70" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="{x:Null}" Style="{DynamicResource FirstStageLabel}"/>
-        <lvc:CartesianChart Name="PeriodLineChart" Series="{Binding SeriesCollection}" LegendLocation="Right" Grid.Column="0" Grid.Row="1" Margin="0,47,0,0">
+        <lvc:CartesianChart Name="PeriodLineChart" Series="{Binding SeriesCollection}" LegendLocation="Right" Grid.Column="0" Grid.Row="1" Margin="0,47,0,0" FontSize="14">
             <lvc:CartesianChart.AxisY>
                 <lvc:Axis Title="Занятость"></lvc:Axis>
             </lvc:CartesianChart.AxisY>
@@ -31,23 +31,22 @@
                 <lvc:Axis Title="Период" Labels="{Binding PeriodChartLabels}"></lvc:Axis>
             </lvc:CartesianChart.AxisX>
         </lvc:CartesianChart>
-        <Label x:Name="PeriodStatsLabel" Grid.Row="2" Grid.Column="0" Margin="5" Content=":" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF3CA0DC" Style="{DynamicResource FirstStageLabel}"/>
+        <Label x:Name="PeriodStatsLabel" Grid.Row="2" Grid.Column="0" Margin="5" Content=":" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF3CA0DC" Style="{DynamicResource FirstStageLabel}" Template="{StaticResource LabelRounder}"/>
 
-        <Label x:Name="DepartmentStatsLabel" Grid.Row="0" Grid.Column="1" Content="Статистика отделов:" HorizontalAlignment="Center" Margin="10,10,10,0" VerticalAlignment="Top" Height="48" Width="247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource FirstStageLabel}" Background="#FF3CA0DC"/>
-        <lvc:PieChart Name="DepartmentPie" Grid.Row="1" Grid.Column="1" LegendLocation="Bottom"></lvc:PieChart>
-        <Label x:Name="STDDepartmentLabel" Grid.Row="2" Grid.Column="1" Margin="5" Content=":" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF3CA0DC" Style="{DynamicResource FirstStageLabel}"/>
+        <Label x:Name="DepartmentStatsLabel" Grid.Row="0" Grid.Column="1" Content="Статистика отделов:" HorizontalAlignment="Center" Margin="10,10,10,0" VerticalAlignment="Top" Height="48" Width="247" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource FirstStageLabel}" Background="#FF3CA0DC" Template="{StaticResource LabelRounder}"/>
+        <lvc:PieChart Name="DepartmentPie" Grid.Row="1" Grid.Column="1" LegendLocation="Bottom" FontSize="14"></lvc:PieChart>
+        <Label x:Name="STDDepartmentLabel" Grid.Row="2" Grid.Column="1" Margin="5" Content=":" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF3CA0DC" Style="{DynamicResource FirstStageLabel}" Template="{StaticResource LabelRounder}"/>
 
 
-        <Label x:Name="EmployeeStatsLabel" Grid.Row="0" Grid.Column="2" Content="Статистика сотрудников:" HorizontalAlignment="Center" Margin="10,10,10,0" VerticalAlignment="Top" Height="48" Width="246" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource FirstStageLabel}" Background="#FF3CA0DC"/>
-        <DataGrid x:Name="EmployeeDG" Grid.Row="1" Grid.Column="2" Margin="5,0" Background="White" AutoGenerateColumns="False" CanUserAddRows="False">
+        <Label x:Name="EmployeeStatsLabel" Grid.Row="0" Grid.Column="2" Content="Статистика сотрудников:" HorizontalAlignment="Center" Margin="10,10,10,0" VerticalAlignment="Top" Height="48" Width="246" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource FirstStageLabel}" Background="#FF3CA0DC" Template="{StaticResource LabelRounder}"/>
+        <DataGrid x:Name="EmployeeDG" Grid.Row="1" Grid.Column="2" Margin="5,0" Background="White" AutoGenerateColumns="False" CanUserAddRows="False" FontSize="14">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="id" Width="1*" Binding="{Binding EmployeeId}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Фамилия" Width="2*" Binding="{Binding Employee.Passport.Surname}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Имя" Width="2*" Binding="{Binding Employee.Passport.Name}"></DataGridTextColumn>
+                <DataGridTextColumn Header="id" Visibility="Hidden" Binding="{Binding EmployeeId}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Сотрудник" Width="2*" Binding="{Binding Employee.Passport.Inits}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Занятость" Width="2*" Binding="{Binding WorkLoadHours}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Label x:Name="STDEmployeeLabel" Grid.Row="2" Grid.Column="3" Margin="5" Content=":" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF3CA0DC" Style="{DynamicResource FirstStageLabel}"/>
+        <Label x:Name="STDEmployeeLabel" Grid.Row="2" Grid.Column="3" Margin="5" Content=":" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FF3CA0DC" Style="{DynamicResource FirstStageLabel}" Template="{StaticResource LabelRounder}"/>
 
     </Grid>
 </Page>

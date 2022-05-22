@@ -77,5 +77,10 @@ namespace HRM.Desktop.Pages
         {
             window.Close();
         }
+
+        private void Registration_Button_Click(object sender, RoutedEventArgs e)
+        {
+            window.MainFrame.Navigate(new RegistrationPage(window));
+        }
     }
 }

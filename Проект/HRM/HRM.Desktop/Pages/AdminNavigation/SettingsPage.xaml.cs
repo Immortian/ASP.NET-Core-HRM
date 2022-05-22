@@ -31,7 +31,7 @@ namespace HRM.Desktop.Pages.AdminNavigation
             InitializeComponent();
             window = mainWindow;
 
-            var companyDataResponse = window.client.GetAsync(new Uri("https://localhost:44355/api/Statistics/CompanyData")).Result;
+            var companyDataResponse = window.client.GetAsync(new Uri("https://localhost:44355/api/CompanyData")).Result;
             var companyDataResponseContent = (CompanyData)JsonConvert.DeserializeObject(companyDataResponse.Content.ReadAsStringAsync().Result, typeof(CompanyData));
             companyData = companyDataResponseContent;
             CompanyNameTB.Text = companyData.CompanyName;

@@ -3,11 +3,18 @@
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-      xmlns:local="clr-namespace:HRM.Desktop.Pages.AdminNavigation"
+      xmlns:local="clr-namespace:HRM.Desktop.Pages.AdminNavigation" 
+      xmlns:model="clr-namespace:HRM.Desktop.Model"
       mc:Ignorable="d" 
       d:DesignHeight="400" d:DesignWidth="800"
       Title="CreateNextPeriodPage">
-
+    <Page.Resources>
+        <local:DepartmentCollection x:Key="DepartmentList">
+            <model:Department DepartmentId="1" Direction="Тех поддержка"/>
+            <model:Department DepartmentId="2" Direction="Обслуживание"/>
+        </local:DepartmentCollection>
+    </Page.Resources>
+    
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -27,20 +34,28 @@
         <Rectangle Grid.Row="1" Grid.Column="0" Stroke="#FF3CA0DC" Margin="5"></Rectangle>
         <Label Content="Нагрузка в часах: " HorizontalAlignment="Left" Margin="13,20,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{DynamicResource FirstStageLabel}"/>
         <Label x:Name="LWorkLoad" Content="{Binding ElementName=WorkLoadSlider,Path=Value}" HorizontalAlignment="Left" Height="34" Margin="171,20,0,0" Grid.Row="1" VerticalAlignment="Top" Width="86" Background="{x:Null}" BorderBrush="#FF3CA0DC" Style="{DynamicResource FirstStageLabel}"/>
-        <Button x:Name="CreatePeriodButton" Content="Сформировать" Grid.Column="2" Grid.Row="1" Width="150" Height="30" FontSize="18" Margin="58,110,58,10" Background="#FF3CA0DC" Foreground="Black" BorderBrush="{x:Null}" Click="CreatePeriodButton_Click"/>
+        <Button x:Name="CreatePeriodButton" Content="Сформировать" Grid.Column="2" Grid.Row="1" Width="150" Height="30" FontSize="18" Margin="58,110,58,10" Background="#FF3CA0DC" Foreground="Black" BorderBrush="{x:Null}" Click="CreatePeriodButton_Click" Style="{DynamicResource ButtonStyle2}" />
 
-        <Button x:Name="StatisticsButton" IsEnabled="False" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource ButtonStyle1}" Width="100" Height="100" Click="StatisticsButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/HRM.Desktop;component/Images/ButtonImages/statistics.png"/>
-            </Button.Background>
+        <DataGrid x:Name="DepartmentContextDG" Grid.Row="1" Grid.Column="1" Margin="5" AutoGenerateColumns="False" CanUserAddRows="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Id" Binding="{Binding DepartmentId}" Visibility="Hidden"/>
+                <DataGridComboBoxColumn Header="Отдел" Width="2*" ItemsSource="{StaticResource DepartmentList}" DisplayMemberPath="Direction" TextBinding="{Binding DepartmentTitle}" />
+                <DataGridTextColumn Header="Нагрузка" Binding="{Binding StaticHours}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        
+        <Button x:Name="StatisticsButton" Background="Transparent" IsEnabled="False" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource ButtonStyle1}" Width="100" Height="100" Click="StatisticsButton_Click">
+            <StackPanel>
+                <Image Source="/HRM.Desktop;component/Images/ButtonImages/statistics.png"/>
+            </StackPanel>
         </Button>
         <Label Grid.Row="3" Grid.Column="0" Content="Распределение часов" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource FirstStageLabel}" Foreground="#FF3CA0DC"/>
 
 
-        <Button x:Name="DocumentsButton" IsEnabled="False" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource ButtonStyle1}" Width="100" Height="100" Click="DocumentsButton_Click" >
-            <Button.Background>
-                <ImageBrush ImageSource="/HRM.Desktop;component/Images/ButtonImages/document.png"/>
-            </Button.Background>
+        <Button x:Name="DocumentsButton" Background="Transparent" IsEnabled="False" Grid.Column="1" Grid.Row="2" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{DynamicResource ButtonStyle1}" Width="100" Height="100" Click="DocumentsButton_Click" >
+            <StackPanel>
+                <Image Source="/HRM.Desktop;component/Images/ButtonImages/document.png"/>
+            </StackPanel>
         </Button>
         <Label Grid.Row="3" Grid.Column="1" Content="Доп. соглашения" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Style="{DynamicResource FirstStageLabel}" Foreground="#FF3CA0DC"/>
         <Slider x:Name="WorkLoadSlider" Margin="10,60,10,0" Grid.Row="1" VerticalAlignment="Top" TickPlacement="BottomRight"/>

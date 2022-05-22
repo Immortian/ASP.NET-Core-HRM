@@ -17,10 +17,10 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Rectangle Grid.Column="0" Margin="10" Stroke="Black" Grid.RowSpan="2"/>
+        <Rectangle Grid.Column="0" Margin="10" Stroke="#FF3CA0DC" Grid.RowSpan="2" RadiusX="20" RadiusY="20" Fill="#FFEEF9FF"/>
         <TextBlock Grid.Column="0" Grid.Row="0" Margin="15,15,15,0" VerticalAlignment="Top" Text="Данные о компании" TextAlignment="Center" Style="{DynamicResource UnfocusedTextBlock}" Height="32"/>
 
-        <Rectangle Grid.Column="1" Margin="10" Stroke="Black" Grid.RowSpan="2"/>
+        <Rectangle Grid.Column="1" Margin="10" Stroke="#FF3CA0DC" Grid.RowSpan="2" RadiusX="20" RadiusY="20" Fill="#FFEEF9FF"/>
         <TextBlock Grid.Column="1" Grid.Row="0" Margin="15,15,15,0" VerticalAlignment="Top" Text="Формирование документов" TextAlignment="Center" Style="{DynamicResource UnfocusedTextBlock}" Height="32"/>
         <Label Content="Название" HorizontalAlignment="Left" Margin="15,10,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{DynamicResource FirstStageLabel}"/>
         <Label Content="Директор" HorizontalAlignment="Left" Margin="15,49,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{DynamicResource FirstStageLabel}"/>
@@ -32,18 +32,18 @@
         <Label Content="Банк" HorizontalAlignment="Left" Margin="15,88,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{DynamicResource FirstStageLabel}" Grid.Column="1"/>
         <Label Content="К/С" HorizontalAlignment="Left" Margin="15,49,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{DynamicResource FirstStageLabel}" Grid.Column="1"/>
 
-        <TextBox x:Name="CompanyNameTB" VerticalContentAlignment="Center" Height="34" Margin="118,10,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}"/>
-        <TextBox x:Name="DirectorTB" VerticalContentAlignment="Center" Height="34" Margin="118,49,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}"/>
-        <TextBox x:Name="AddressTB" VerticalContentAlignment="Center" Height="34" Margin="118,88,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}"/>
-        <TextBox x:Name="INNTB" VerticalContentAlignment="Center" Height="34" Margin="118,127,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}"/>
-        <TextBox x:Name="KPPTB" VerticalContentAlignment="Center" Height="34" Margin="118,166,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}"/>
-        <TextBox x:Name="BIKTB" VerticalContentAlignment="Center" Height="34" Margin="118,205,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}"/>
-        <TextBox x:Name="PaymentAccTB" VerticalContentAlignment="Center" Height="34" Margin="120,10,25,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Grid.Column="1"/>
-        <TextBox x:Name="CorrAccTB" VerticalContentAlignment="Center" Height="34" Margin="120,49,25,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Grid.Column="1"/>
-        <TextBox x:Name="BankTB" VerticalContentAlignment="Center" Height="34" Margin="120,88,25,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Grid.Column="1"/>
+        <TextBox x:Name="CompanyNameTB" VerticalContentAlignment="Center" Height="34" Margin="118,10,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Template="{StaticResource Rounder}"/>
+        <TextBox x:Name="DirectorTB" VerticalContentAlignment="Center" Height="34" Margin="118,49,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Template="{StaticResource Rounder}"/>
+        <TextBox x:Name="AddressTB" VerticalContentAlignment="Center" Height="34" Margin="118,88,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Template="{StaticResource Rounder}"/>
+        <TextBox x:Name="INNTB" VerticalContentAlignment="Center" Height="34" Margin="118,127,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Template="{StaticResource Rounder}"/>
+        <TextBox x:Name="KPPTB" VerticalContentAlignment="Center" Height="34" Margin="118,166,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Template="{StaticResource Rounder}"/>
+        <TextBox x:Name="BIKTB" VerticalContentAlignment="Center" Height="34" Margin="118,205,27,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Template="{StaticResource Rounder}"/>
+        <TextBox x:Name="PaymentAccTB" VerticalContentAlignment="Center" Height="34" Margin="120,10,25,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Template="{StaticResource Rounder}" Grid.Column="1"/>
+        <TextBox x:Name="CorrAccTB" VerticalContentAlignment="Center" Height="34" Margin="120,49,25,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Template="{StaticResource Rounder}" Grid.Column="1"/>
+        <TextBox x:Name="BankTB" VerticalContentAlignment="Center" Height="34" Margin="120,88,25,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Template="{StaticResource Rounder}" Grid.Column="1"/>
         <Label Content="Путь к файлам" HorizontalAlignment="Left" Margin="15,127,0,0" Grid.Row="1" VerticalAlignment="Top" Style="{DynamicResource FirstStageLabel}" Grid.Column="1"/>
-        <TextBox x:Name="FilePathTB" VerticalContentAlignment="Center" Height="34" Margin="145,127,25,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Grid.Column="1"/>
-        <Button x:Name="OpenDialogButton" Grid.Column="1" HorizontalAlignment="Right" Margin="0,127,25,0" Grid.Row="1" VerticalAlignment="Top" Width="30" Height="34" Style="{DynamicResource ButtonStyle1}" Click="OpenDialogButton_Click"/>
+        <TextBox x:Name="FilePathTB" VerticalContentAlignment="Center" Height="34" Margin="145,127,25,0" Grid.Row="1" TextWrapping="NoWrap" VerticalAlignment="Top" Style="{DynamicResource TextInput}" Template="{StaticResource Rounder}" Grid.Column="1"/>
+        <Button x:Name="OpenDialogButton" Grid.Column="1" HorizontalAlignment="Right" Margin="0,127,25,0" Grid.Row="1" VerticalAlignment="Top" Width="30" Height="34" Style="{DynamicResource ButtonStyle2}" Click="OpenDialogButton_Click"/>
 
         <Button x:Name="SaveButton" Content="Сохранить" Grid.Column="1" HorizontalAlignment="Left" Margin="275,0,0,26" Grid.Row="1" VerticalAlignment="Bottom" Width="100" Height="28" Style="{DynamicResource ButtonStyle2}" Click="SaveButton_Click"/>
         <Button x:Name="BackButton" Content="Назад" Grid.Column="1" HorizontalAlignment="Left" Margin="170,0,0,26" Grid.Row="1" VerticalAlignment="Bottom" Width="100" Height="28" Style="{DynamicResource ButtonStyle2}" Click="BackButton_Click"/>

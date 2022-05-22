@@ -1,7 +1,9 @@
-﻿using HRM.Desktop.Model;
+﻿using HRM.Desktop.Commands;
+using HRM.Desktop.Model;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
@@ -24,6 +26,7 @@ namespace HRM.Desktop.Pages.AdminNavigation
     public partial class CreateNextPeriodPage : Page
     {
         readonly MainWindow window;
+        public List<DistributionOption> options;
         Period currentPeriod;
         Period newPeriod;
         public CreateNextPeriodPage(MainWindow mainWindow)
@@ -31,7 +34,10 @@ namespace HRM.Desktop.Pages.AdminNavigation
             InitializeComponent();
             window = mainWindow;
             GetPeriodContext();
-
+            
+            options = new List<DistributionOption>();
+            //options.Add(new DistributionOption());
+            DepartmentContextDG.ItemsSource = options;
             var activeEmployeeResponse = window.client.GetAsync(new Uri("https://localhost:44355/api/Employee")).Result;
             var activeEmployeeResponseContent = (List<Employee>)JsonConvert.DeserializeObject(activeEmployeeResponse.Content.ReadAsStringAsync().Result, typeof(List<Employee>));
 
@@ -88,16 +94,28 @@ namespace HRM.Desktop.Pages.AdminNavigation
         private void CreatePeriodButton_Click(object sender, RoutedEventArgs e)
         {
             int WorkLoad = (int)Math.Round(WorkLoadSlider.Value);
-            try
+
+            if (options.Count != 0)
+            {
+                var departmnetResponse = window.client.GetAsync(new Uri("https://localhost:44355/api/Statistics/Department")).Result;
+
+                List<Department> departments = (List<Department>)JsonConvert.DeserializeObject(departmnetResponse.Content.ReadAsStringAsync().Result, typeof(List<Department>));
+                foreach (var opt in options)
+                {
+                    opt.DepartmentId = departments.Where(x => x.Direction == opt.DepartmentTitle).Select(x => x.DepartmentId).FirstOrDefault();
+
+                    var stringContent = new StringContent(JsonConvert.SerializeObject(new Commands.CreateDistributionCommand { MonthlyHours = WorkLoad, Options = options }), Encoding.UTF8, "application/json");
+                    var distributionResponse = window.client.PostAsync(new Uri("https://localhost:44355/api/Distribution"), stringContent).Result;
+                    if (distributionResponse.StatusCode != System.Net.HttpStatusCode.OK)
+                        window.error.DBError();
+                }
+            }
+            else
             {
                 var stringContent = new StringContent(JsonConvert.SerializeObject(new Commands.CreateDistributionCommand { MonthlyHours = WorkLoad, Options = null }), Encoding.UTF8, "application/json");
                 var distributionResponse = window.client.PostAsync(new Uri("https://localhost:44355/api/Distribution"), stringContent).Result;
                 if (distributionResponse.StatusCode != System.Net.HttpStatusCode.OK)
                     window.error.DBError();
-            }
-            catch
-            {
-                window.error.DBError();
             }
         }
 
@@ -105,5 +123,8 @@ namespace HRM.Desktop.Pages.AdminNavigation
         {
             window.error.CheckSettingsSaved();
         }
+    }
+    public class DepartmentCollection : ObservableCollection<Department>
+    {
     }
 }

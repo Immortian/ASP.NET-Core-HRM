@@ -24,24 +24,24 @@
         <Label x:Name="HLabel" Margin="15,0,0,0" Grid.Row="0" Height="32" VerticalAlignment="Center" HorizontalAlignment="Left" Width="217" Style="{DynamicResource FirstStageLabel}"></Label>
 
 
-        <Button x:Name="CurrentStatisticsButton" Grid.Column="0" Grid.Row="1" Width="150" Margin="59,0,58,10" HorizontalAlignment="Center" Style="{DynamicResource ButtonStyle1}" Height="150" VerticalAlignment="Bottom" Click="CurrentStatisticsButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/HRM.Desktop;component/Images/ButtonImages/statistics.png"/>
-            </Button.Background>
+        <Button x:Name="CurrentStatisticsButton" Background="Transparent" Grid.Column="0" Grid.Row="1" Width="150" Margin="59,0,58,10" HorizontalAlignment="Center" Style="{DynamicResource ButtonStyle1}" Height="150" VerticalAlignment="Bottom" Click="CurrentStatisticsButton_Click">
+            <StackPanel>
+                <Image Source="/HRM.Desktop;component/Images/ButtonImages/statistics.png"/>
+            </StackPanel>
         </Button>
         <TextBlock Grid.Column="0" Grid.Row="2" Margin="10,15,10,0" VerticalAlignment="Top" Text="Посмотреть статистику текущего периода" Height="106" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Width="247" Style="{DynamicResource UnfocusedTextBlock}"/>
 
-        <Button x:Name="CurrentDocumentsButton" Grid.Column="1" Grid.Row="1" Margin="60,0,57,10" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Center" Width="150" Height="150" VerticalAlignment="Bottom" Click="CurrentDocumentsButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/HRM.Desktop;component/Images/ButtonImages/document.png"/>
-            </Button.Background>
+        <Button x:Name="CurrentDocumentsButton" Background="Transparent" Grid.Column="1" Grid.Row="1" Margin="60,0,57,10" Style="{DynamicResource ButtonStyle1}" HorizontalAlignment="Center" Width="150" Height="150" VerticalAlignment="Bottom" Click="CurrentDocumentsButton_Click">
+            <StackPanel>
+                <Image Source="/HRM.Desktop;component/Images/ButtonImages/document.png"/>
+            </StackPanel>
         </Button>
         <TextBlock Grid.Column="1" Grid.Row="2" Margin="10,15,10,0" VerticalAlignment="Top" Text="Дополнительные соглашения текущего периода" Height="106" AllowDrop="True" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Width="247" Style="{DynamicResource UnfocusedTextBlock}"/>
 
-        <Button x:Name="NextPeriodOrganizerButton" Grid.Column="2" Grid.Row="1" Width="150" Margin="59,0,57,10" HorizontalAlignment="Center" Height="150" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle1}" Click="NextPeriodOrganizerButton_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="/HRM.Desktop;component/Images/ButtonImages/stoncs.png"/>
-            </Button.Background>
+        <Button x:Name="NextPeriodOrganizerButton" Background="Transparent" Grid.Column="2" Grid.Row="1" Width="150" Margin="59,0,57,10" HorizontalAlignment="Center" Height="150" VerticalAlignment="Bottom" Style="{DynamicResource ButtonStyle1}" Click="NextPeriodOrganizerButton_Click">
+            <StackPanel>
+                <Image Source="/HRM.Desktop;component/Images/ButtonImages/stoncs.png"/>
+            </StackPanel>
         </Button>
         <TextBlock Grid.Column="2" Grid.Row="2" Margin="10,15,10,0" VerticalAlignment="Top" Text="Установить курс на следующий период" Height="106" AllowDrop="True" TextWrapping="Wrap" TextAlignment="Center" HorizontalAlignment="Center" Width="246" Style="{DynamicResource UnfocusedTextBlock}"/>
     </Grid>

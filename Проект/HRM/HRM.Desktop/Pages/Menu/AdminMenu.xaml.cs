@@ -41,12 +41,12 @@ namespace HRM.Desktop.Pages.Menu
 
         private void DepartmentButton_Click(object sender, RoutedEventArgs e)
         {
-            window.MainFrame.Navigate(null);
+            window.MainFrame.Navigate(new EmployeeAchievmentsPage(window));
         }
 
         private void DocumentsButton_Click(object sender, RoutedEventArgs e)
         {
-            window.MainFrame.Navigate(null);
+            window.MainFrame.Navigate(new DocumentDownloadPage());
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)

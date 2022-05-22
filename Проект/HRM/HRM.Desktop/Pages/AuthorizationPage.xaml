@@ -9,12 +9,13 @@
       Title="AuthorizationPage">
 
     <Grid>
-        <Label Content="Логин:" HorizontalAlignment="Left" Height="31" Margin="173,129,0,0" VerticalAlignment="Top" Width="98" Style="{DynamicResource FirstStageLabel}"/>
-        <Label Content="Пароль:" HorizontalAlignment="Left" Height="31" Margin="173,186,0,0" VerticalAlignment="Top" Width="98" Style="{DynamicResource FirstStageLabel}" />
-        <TextBox x:Name="UsernameTB" HorizontalAlignment="Left" Height="31" Margin="276,129,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="311" FontSize="20" Style="{DynamicResource TextInput}"/>
-        <PasswordBox x:Name="PasswordPB" HorizontalAlignment="Left" Height="31" Margin="276,185,0,0" VerticalAlignment="Top" Width="311" FontSize="20" Style="{DynamicResource PasswordInput}"/>
-        <CheckBox x:Name="SaveAuthChB" Content="Запомнить меня" HorizontalAlignment="Left" Margin="276,221,0,0" VerticalAlignment="Top"/>
-        <Button Content="Войти" Name="Login_Button" HorizontalAlignment="Left" Margin="221,257,0,0" VerticalAlignment="Top" Width="138" Height="29" Click="Login_Button_Click" Style="{DynamicResource ButtonStyle2}"/>
-        <Button Content="Выход" Name="Exit_Button" HorizontalAlignment="Left" Margin="428,257,0,0" VerticalAlignment="Top" Width="134" Height="29" Click="Exit_Button_Click" Style="{DynamicResource ButtonStyle2}"/>
+        <Label Content="Логин:" HorizontalAlignment="Left" Height="31" Margin="173,84,0,0" VerticalAlignment="Top" Width="98" Style="{DynamicResource FirstStageLabel}"/>
+        <Label Content="Пароль:" HorizontalAlignment="Left" Height="31" Margin="173,141,0,0" VerticalAlignment="Top" Width="98" Style="{DynamicResource FirstStageLabel}" />
+        <TextBox x:Name="UsernameTB" HorizontalAlignment="Left" Height="31" Margin="276,84,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="311" FontSize="20" Style="{DynamicResource TextInput}" Template="{StaticResource Rounder}"/>
+        <PasswordBox x:Name="PasswordPB" HorizontalAlignment="Left" Height="31" Margin="276,140,0,0" VerticalAlignment="Top" Width="311" FontSize="20" Style="{DynamicResource PasswordInput}" Background="White" Template="{StaticResource Rounder}" />
+        <CheckBox x:Name="SaveAuthChB" Content="Запомнить меня" HorizontalAlignment="Left" Margin="276,176,0,0" VerticalAlignment="Top" Height="20"/>
+        <Button Content="Войти" Name="Login_Button" HorizontalAlignment="Left" Margin="221,212,0,0" VerticalAlignment="Top" Width="138" Height="29" Click="Login_Button_Click" Style="{DynamicResource ButtonStyle2}"/>
+        <Button Content="Выход" Name="Exit_Button" HorizontalAlignment="Left" Margin="428,212,0,0" VerticalAlignment="Top" Width="134" Height="29" Click="Exit_Button_Click" Style="{DynamicResource ButtonStyle2}"/>
+        <Button Content="Регистрация" x:Name="Registration_Button" HorizontalAlignment="Left" Margin="484,176,0,0" VerticalContentAlignment="Top" VerticalAlignment="Top" Width="103" Style="{DynamicResource ButtonStyle2}" FontSize="12" Click="Registration_Button_Click"/>
     </Grid>
 </Page>
