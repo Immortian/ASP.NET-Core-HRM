@@ -12,6 +12,7 @@ namespace HRM.Persistence
         {
             context = _context;
             Authorization = new AuthorizationRepository(context);
+            Achievement = new AchievementRepository(context);
             Candidate = new CandidateRepository(context);
             CompanyData = new CompanyDataRepository(context);
             ContactData = new ContactDataRepository(context);
@@ -25,6 +26,7 @@ namespace HRM.Persistence
             Dismissal = new DismissalRepository(context);
         }
 
+        public IAchievementRepository Achievement { get; set; }
         public ICompanyDataRepository CompanyData { get; set; }
         public ICandidateRepository Candidate { get ; set; }
         public IContactDataRepository ContactData { get; set; }

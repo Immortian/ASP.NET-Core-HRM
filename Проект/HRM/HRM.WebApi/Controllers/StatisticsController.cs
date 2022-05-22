@@ -50,6 +50,12 @@ namespace HRM.WebApi.Controllers
             else
                 return Ok(null);
         }
+        [HttpGet("Department")]
+        public async Task<List<Department>> GetDepartments()
+        {
+            return await context.Department.GetAllAsync();
+        }
+
         [HttpGet("WorkLoad/Department/{Id}")]
         public List<DepartmentWorkLoad> GetDepartmentWorkLoadsOfPeriod(int Id)
         {

@@ -6,6 +6,7 @@ namespace HRM.Application.Interfaces
     public interface IUnitOfWork
     {
         IAuthorizationRepository Authorization { get; set; }
+        IAchievementRepository Achievement { get; set; }
         ICandidateRepository Candidate { get; set; }
         ICompanyDataRepository CompanyData { get; set; }
         IContactDataRepository ContactData { get; set; }

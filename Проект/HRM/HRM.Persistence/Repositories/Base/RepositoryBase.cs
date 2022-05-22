@@ -41,7 +41,14 @@ namespace HRM.Persistence.Repositories.Base
 
         public async Task UpdateAsync(T entity)
         {
-            context.Set<T>().Update(entity);
+            if (context.Set<T>().Contains(entity))
+            {
+                context.Set<T>().Update(entity);
+            }
+            else
+            {
+                await context.Set<T>().AddAsync(entity);
+            }
             //await context.SaveChangesAsync();
         }
     }
