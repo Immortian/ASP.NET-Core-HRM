@@ -13,6 +13,7 @@
 	<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="10.3.6" />
 	<PackageReference Include="Open-XML-SDK" Version="2.9.1" />
 	<PackageReference Include="Quartz" Version="3.4.0" />
+	<PackageReference Include="Quartz.AspNetCore" Version="3.4.0" />
   </ItemGroup>
 
   <ItemGroup>

@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 
-namespace HRM.Tests.Commands
+namespace HRM.Tests.Commands.HRManagement
 {
     public class InterviewingCommandHandlerTests : TestCommandBase
     {

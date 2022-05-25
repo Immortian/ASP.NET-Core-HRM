@@ -3,6 +3,7 @@ using HRM.Persistence;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -177,14 +178,18 @@ namespace HRM.Tests.Common
                     ScheduleId = 1,
                     DepartmentId = 1,
                     PeriodId = 1,
-                    WorkLoad = 120
+                    WorkLoad = 120,
+                    IsEqualOrMore = false,
+                    WorkedHours = 100
                 },
                 new DepartmentWorkLoad
                 {
                     ScheduleId = 2,
                     DepartmentId = 2,
                     PeriodId = 1,
-                    WorkLoad = 120
+                    WorkLoad = 120,
+                    WorkedHours = 120,
+                    IsEqualOrMore = true
                 });
             context.EmployeeWorkLoads.AddRange(
                 new EmployeeWorkLoad
@@ -192,14 +197,43 @@ namespace HRM.Tests.Common
                     AddendumId = 1,
                     EmployeeId = 1,
                     PeriodId = 1,
-                    WorkLoadHours = 120
+                    WorkLoadHours = 120,
+                    WorkedHours = 100
                 },
                 new EmployeeWorkLoad
                 {
                     AddendumId = 2,
                     EmployeeId = 2,
                     PeriodId = 1,
-                    WorkLoadHours = 120
+                    WorkLoadHours = 120,
+                    WorkedHours = 140
+                });
+            context.CompanyData.Add(
+                new CompanyData
+                {
+                    DirectorName = "Директор",
+                    CompanyName = "ООО Компания",
+                    CompanyAddress = "Аддресс",
+                    Bank = "Sberbank",
+                    BIK = "1234567890",
+                    CAcc = "1234567890",
+                    PAcc = "1234567890",
+                    INN = "1234567890",
+                    KPP = "1234567890"
+                });
+            byte[] fileBytes;
+            FileStream file = new FileStream(@"wwwroot/files/prefab.docx", FileMode.Open, FileAccess.Read);
+            using (var ms = new MemoryStream())
+            {
+                file.CopyTo(ms);
+                fileBytes = ms.ToArray();
+            }
+            context.Files.Add(
+                new Domain.File
+                {
+                    Id = 1,
+                    Name = "prefab.docx",
+                    Data = fileBytes
                 });
             context.SaveChanges();
             return context;

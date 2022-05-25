@@ -51,6 +51,7 @@ namespace HRM.Application.Dismissing
         public async Task Execute(IJobExecutionContext? context)
         {
             await unitOfWork.Employee.DeleteAsync(unitOfWork.Employee.GetByIdAsync(EmployeeId).Result);
+            await unitOfWork.Save();
         }
     }
 }
