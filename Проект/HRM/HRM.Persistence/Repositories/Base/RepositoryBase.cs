@@ -51,5 +51,10 @@ namespace HRM.Persistence.Repositories.Base
             }
             //await context.SaveChangesAsync();
         }
+
+        public virtual async Task<T?> LastAsync()
+        {
+            return await context.Set<T>().LastOrDefaultAsync();
+        }
     }
 }
