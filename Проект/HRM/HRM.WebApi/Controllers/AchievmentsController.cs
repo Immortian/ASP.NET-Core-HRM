@@ -1,4 +1,5 @@
 ﻿using HRM.Application.Interfaces;
+using HRM.Application.AchievementsHandling;
 using HRM.Domain;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -24,14 +25,11 @@ namespace HRM.WebApi.Controllers
             return await context.Achievement.GetAllAsync();
         }
 
-        [HttpPut]
-        public async Task<IActionResult> UpdateAchievementsList(List<PersonalAchievement> achievements)
+        [HttpPost]
+        public async Task<IActionResult> UpdateAchievementsList(AddOrUpdatePersonalAchievementCommand request)
         {
-            foreach(var achiev in achievements)
-            {
-                await context.Achievement.UpdateAsync(achiev);
-            }
-            await context.Save();
+            var handler = new AddOrUpdatePersonalAchievementCommandHandler(context);
+            await handler.AddOrUpdate(request);
             return Ok();
         }
     }

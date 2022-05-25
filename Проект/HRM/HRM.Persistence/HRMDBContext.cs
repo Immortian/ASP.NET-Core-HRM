@@ -382,7 +382,7 @@ namespace HRM.Persistence
 
                 entity.Property(e => e.AchievementId).HasColumnName("Achievement_id");
 
-                entity.Property(e => e.Description).HasMaxLength(50);
+                entity.Property(e => e.Description).HasMaxLength(200);
 
                 entity.Property(e => e.EmployeeId).HasColumnName("Employee_id");
 

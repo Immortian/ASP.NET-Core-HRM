@@ -85,6 +85,7 @@
     <Compile Include="Commands\GenerateAddendumCommand.cs" />
     <Compile Include="Commands\InterviewingCommand.cs" />
     <Compile Include="Commands\LoginCommand.cs" />
+    <Compile Include="Commands\AddOrUpdatePersonalAchievementCommand.cs" />
     <Compile Include="Commands\RegistrationCommand.cs" />
     <Compile Include="Commands\UpdateDistributionCommand.cs" />
     <Compile Include="Handlers\ExeptionsAndMessenges.cs" />
