@@ -2,8 +2,6 @@
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
 using HRM.Application.Interfaces;
-using HRM.Application.BusinessLogic;
-using HRM.Persistence.Repositories;
 
 namespace HRM.Persistence
 {

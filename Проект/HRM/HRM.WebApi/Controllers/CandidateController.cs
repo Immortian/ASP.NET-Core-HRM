@@ -1,7 +1,6 @@
 ﻿using HRM.Application.Interfaces;
 using HRM.Application.Interviewing;
 using HRM.Domain;
-using HRM.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRM.WebApi.Controllers

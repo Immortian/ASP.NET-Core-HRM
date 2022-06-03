@@ -1,12 +1,7 @@
 ﻿using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using Quartz;
-using System.Text;
-using System.Threading.Tasks;
 using HRM.Application.Salary;
 
 namespace HRM.Application

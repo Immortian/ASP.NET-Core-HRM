@@ -1,11 +1,6 @@
 ﻿using HRM.Application.Interfaces;
 using HRM.Domain;
 using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HRM.WebApi.Controllers
 {

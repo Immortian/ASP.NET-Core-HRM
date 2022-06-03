@@ -2,10 +2,7 @@
 using HRM.Application.WorkLoadDistribution.CreateDistribution;
 using HRM.Tests.Common;
 using Microsoft.EntityFrameworkCore;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Xunit;
 

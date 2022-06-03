@@ -2,7 +2,6 @@
 using HRM.Application.Authorization.Registration;
 using HRM.Application.Interfaces;
 using HRM.Domain;
-using HRM.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRM.WebApi.Controllers.Authorization

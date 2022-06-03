@@ -1,5 +1,4 @@
-﻿using HRM.Domain;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace HRM.Application.Interviewing
 {

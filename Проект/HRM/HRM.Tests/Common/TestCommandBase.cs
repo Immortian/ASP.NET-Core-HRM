@@ -1,10 +1,6 @@
 ﻿using HRM.Application.Interfaces;
 using HRM.Persistence;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HRM.Tests.Common
 {

@@ -1,12 +1,8 @@
 ﻿using HRM.Application.Interfaces;
 using HRM.Application.WorkLoadDistribution.CreateDistribution;
 using HRM.Application.WorkLoadDistribution.GenerateAddendum;
-using HRM.Application.WorkLoadDistribution.ReadDistribution;
 using HRM.Application.WorkLoadDistribution.UpdateDistribution;
-using HRM.Domain;
-using HRM.Persistence;
 using Microsoft.AspNetCore.Mvc;
-using System;
 using System.IO.Compression;
 
 namespace HRM.WebApi.Controllers

@@ -1,6 +1,5 @@
 ﻿using HRM.Application.Dismissing;
 using HRM.Application.Interfaces;
-using HRM.Persistence;
 using Microsoft.AspNetCore.Mvc;
 
 namespace HRM.WebApi.Controllers

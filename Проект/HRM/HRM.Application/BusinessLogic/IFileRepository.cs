@@ -1,12 +1,7 @@
 ﻿using HRM.Application.BuisnessLogic.Base;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using File = HRM.Domain.File;
 
-namespace HRM.Application.BusinessLogic
+namespace HRM.Application.BuisnessLogic
 {
     public interface IFileRepository : IRepositoryBase<File>
     {

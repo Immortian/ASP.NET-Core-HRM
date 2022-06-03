@@ -1,5 +1,4 @@
 ﻿using HRM.Application.BuisnessLogic;
-using HRM.Application.BusinessLogic;
 
 namespace HRM.Application.Interfaces
 {

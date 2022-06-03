@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace HRM.Domain
+﻿namespace HRM.Domain
 {
     public partial class PersonalAchievement
     {
