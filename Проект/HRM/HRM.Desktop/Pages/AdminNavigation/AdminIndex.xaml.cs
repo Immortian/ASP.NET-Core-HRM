@@ -36,7 +36,7 @@ namespace HRM.Desktop.Pages.AdminNavigation
         private void CurrentDocumentsButton_Click(object sender, RoutedEventArgs e)
         {
             window.error.CheckSettingsSaved();
-            window.MainFrame.Navigate(new DocumentDownloadPage());
+            window.MainFrame.Navigate(new DocumentDownloadPage(window));
         }
 
         private void NextPeriodOrganizerButton_Click(object sender, RoutedEventArgs e)

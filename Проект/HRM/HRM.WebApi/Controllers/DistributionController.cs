@@ -34,16 +34,16 @@ namespace HRM.WebApi.Controllers
             return Ok(request);
         }
 
-        [HttpHead("Addendum")]
-        public async Task<ActionResult> GenerateAddendum()
+        [HttpHead("Addendum/{periodId}")]
+        public async Task<ActionResult> GenerateAddendum(int periodId)
         {
             var handler = new GenerateAddendumCommandHandler(context);
-            foreach (var employeeLoad in context.EmployeeWorkLoad.GetByPeriodId(1))
+            foreach (var employeeLoad in context.EmployeeWorkLoad.GetByPeriodId(periodId))
             {
                 await handler.GenerateAddendum(
                 new GenerateAddendumCommand
                 {
-                    PeriodId = 1,
+                    PeriodId = periodId,
                     EmployeeId = employeeLoad.EmployeeId,
                     WorkLoad = employeeLoad.WorkLoadHours
                 });
@@ -96,6 +96,11 @@ namespace HRM.WebApi.Controllers
                 context.File.ClearStorage(path + "/");
             }
             return fileStreamResult;
+        }
+        [HttpGet("Files")]
+        public async Task<List<Domain.File>> GetFilesByPeriodId()
+        {
+            return context.File.GetFilesWithoutPrefab().ToList();
         }
     }
 }

@@ -46,7 +46,7 @@ namespace HRM.Desktop.Pages.Menu
 
         private void DocumentsButton_Click(object sender, RoutedEventArgs e)
         {
-            window.MainFrame.Navigate(new DocumentDownloadPage());
+            window.MainFrame.Navigate(new DocumentDownloadPage(window));
         }
 
         private void SettingsButton_Click(object sender, RoutedEventArgs e)

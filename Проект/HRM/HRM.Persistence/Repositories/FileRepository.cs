@@ -35,6 +35,11 @@ namespace HRM.Persistence.Repositories
             return context.Files.Where(x=>x.DepartmentId == departmentId && x.PeriodId == periodId).AsNoTracking().ToArray();
         }
 
+        public IEnumerable<Domain.File> GetFilesWithoutPrefab()
+        {
+            return context.Files.Skip(1);
+        }
+
         public Domain.File GetOne(int employeeId, int periodId)
         {
             return context.Files.Where(x=>x.EmployeeId == employeeId && x.PeriodId == periodId).AsNoTracking().FirstOrDefault();

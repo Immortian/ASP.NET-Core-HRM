@@ -9,7 +9,7 @@ namespace HRM.Application.BuisnessLogic
         public IEnumerable<File> GetAllByPeriodId(int periodId);
         public File GetOne(int employeeId, int periodId);
         public IEnumerable<File> GetByDepartmentId(int departmentId, int periodId);
-
+        public IEnumerable<File> GetFilesWithoutPrefab();
         public Task ClearStorage(string path);
     }
 }
